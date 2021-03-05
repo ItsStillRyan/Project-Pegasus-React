@@ -1,0 +1,28 @@
+/* main body css in App.js */
+body{
+    background-color: #363f4a;
+}
+
+/* navbar css in navbar.js */
+.navLink{
+    color: white;
+    margin-top: 2%;
+}
+.navLink p{
+    color: white;
+    font-size:1.2em;
+}
+
+/* landing page css in main.js */
+.logo-col{
+    margin-left: 50%;
+    margin-right:50%;
+    transform: translate(-50%);
+    margin-top: 10%;
+}
+.title-col{
+    text-align: center;
+    color: white;
+    font-size: 5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
