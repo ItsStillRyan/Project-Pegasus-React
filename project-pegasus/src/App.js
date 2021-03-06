@@ -1,23 +1,22 @@
 import React from 'react'
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+//import pages
 import NavbarMain from './commons/navbar'
-import Main from './main'
-import MainFooter from './commons/footer'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './main.css'
+import FooterMain from './commons/footer'
+import MainBody from './pages/main'
+import IndivCate from './pages/individual-categories'
+
 
 
 function App() {
     return (
         <div className="bodyT">
-            <div className="App">
-                <NavbarMain />
-                <header>
-                    <Main />
-                </header>
-                <footer>
-                    <MainFooter />
-                </footer>
-            </div>
+           <Router>
+               <Switch>
+                   <Route exact path="/" component={MainBody} />
+                   <Router exact path=""
+               </Switch>
+           </Router>
         </div>
     )
 }

@@ -1,19 +1,22 @@
 import React from "react";
+import ReactDOM from "react-dom";
 // bootstrap imports
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import { MDBMask, MDBView} from "mdbreact";
 // css imports
-import './main.css'
+import '../main.css'
 // image imports
-import logo from './images/logo-big.png'
-import galaxies from './images/categories-img/galaxies.png'
-import nebulae from './images/categories-img/nebulae.png'
-import planetary from './images/categories-img/planetary.png'
-import starclusters from './images/categories-img/starclusters.png'
-import spacecraft from './images/categories-img/spacecraft.png'
-import others from './images/categories-img/others.png'
+import logo from '../images/logo-big.png'
+import galaxies from '../images/categories-img/galaxies.png'
+import nebulae from '../images/categories-img/nebulae.png'
+import planetary from '../images/categories-img/planetary.png'
+import starclusters from '../images/categories-img/starclusters.png'
+import spacecraft from '../images/categories-img/spacecraft.png'
+import others from '../images/categories-img/others.png'
+//page imports
+import IndivCate from './individual-categories'
 
 export default function Main(props) {
     return (
@@ -30,16 +33,11 @@ export default function Main(props) {
                             />
                         </Col>
                         <Col className="title-col">
-                            Pegasus
+                            The Pegasus Index
                         </Col>
                     </Row>
                 </Container>
             </div>
-
-            <div>
-
-            </div>
-
             <div className="cateBtns">
                 <Container fluid>
                     <Row className="text-center">
