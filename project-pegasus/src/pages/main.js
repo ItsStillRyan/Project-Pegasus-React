@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {Link} from 'react-router-dom'
 // bootstrap imports
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -15,10 +16,8 @@ import planetary from '../images/categories-img/planetary.png'
 import starclusters from '../images/categories-img/starclusters.png'
 import spacecraft from '../images/categories-img/spacecraft.png'
 import others from '../images/categories-img/others.png'
-//page imports
-import IndivCate from './individual-categories'
 
-export default function Main(props) {
+const Main = () => {
     return (
         <React.Fragment>
             <div>
@@ -43,7 +42,7 @@ export default function Main(props) {
                     <Row className="text-center">
                         <Col className="image-style show-col flex-center">
                             <MDBView hover>
-                                <a className="cateGalaxies" href="#">
+                                <Link to="/galaxies">
                                     <img
                                         src={galaxies}
                                         width="500"
@@ -53,12 +52,12 @@ export default function Main(props) {
                                     <MDBMask className="flex-center" overlay="black-light" style={{ height: "275px" }}>
                                         <p className="white-text">Galaxies</p>
                                     </MDBMask>
-                                </a>
+                                </Link>
                             </MDBView>
                         </Col>
                         <Col className="image-style show-col flex-center">
                             <MDBView hover>
-                                <a className="cateStars" href="#">
+                                <Link to="/starcluster">
                                     <img
                                         src={starclusters}
                                         width="500"
@@ -68,14 +67,14 @@ export default function Main(props) {
                                     <MDBMask className="flex-center" overlay="black-light" style={{ height: "275px" }}>
                                         <p className="white-text">Star Clusters</p>
                                     </MDBMask>
-                                </a>
+                                </Link>
                             </MDBView>
                         </Col>
                     </Row>
                     <Row className="text-center">
                         <Col className="image-style show-col flex-center">
                             <MDBView hover>
-                                <a className="cateStars" href="#">
+                                <Link to="/planetary">
                                     <img
                                         src={planetary}
                                         width="500"
@@ -85,12 +84,12 @@ export default function Main(props) {
                                     <MDBMask className="flex-center" overlay="black-light" style={{ height: "275px" }}>
                                         <p className="white-text">Planetary</p>
                                     </MDBMask>
-                                </a>
+                                </Link>
                             </MDBView>
                         </Col>
                         <Col className="image-style show-col flex-center">
                             <MDBView hover>
-                                <a className="cateStars" href="#">
+                                <Link to="/nebulae">
                                     <img
                                         src={nebulae}
                                         width="500"
@@ -100,14 +99,14 @@ export default function Main(props) {
                                     <MDBMask className="flex-center" overlay="black-light" style={{ height: "275px" }}>
                                         <p className="white-text">Nebulae</p>
                                     </MDBMask>
-                                </a>
+                                </Link>
                             </MDBView>
                         </Col>
                     </Row>
                     <Row className="text-center">
                         <Col className="image-style show-col flex-center">
                             <MDBView hover>
-                                <a className="cateStars" href="#">
+                                <Link to="/spacecraft">
                                     <img
                                         src={spacecraft}
                                         width="500"
@@ -117,12 +116,12 @@ export default function Main(props) {
                                     <MDBMask className="flex-center" overlay="black-light" style={{ height: "120px" }}>
                                         <p className="white-text">Space Craft</p>
                                     </MDBMask>
-                                </a>
+                                </Link>
                             </MDBView>
                         </Col>
                         <Col className="image-style show-col flex-center">
                             <MDBView hover>
-                                <a className="cateStars" href="#">
+                                <Link to="/others">
                                     <img
                                         src={others}
                                         width="500"
@@ -132,7 +131,7 @@ export default function Main(props) {
                                     <MDBMask className="flex-center" overlay="black-light" style={{ height: "120px" }}>
                                         <p className="white-text">Others</p>
                                     </MDBMask>
-                                </a>
+                                </Link>
                             </MDBView>
                         </Col>
                     </Row>
@@ -143,3 +142,4 @@ export default function Main(props) {
     )
 }
 
+export default Main
