@@ -40,7 +40,7 @@ export default function Main(props) {
 
             </div>
 
-            <div>
+            <div className="cateBtns">
                 <Container fluid>
                     <Row>
                         <Col className="image-style show-col">

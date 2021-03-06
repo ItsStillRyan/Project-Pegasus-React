@@ -1,3 +1,4 @@
+import React from 'react'
 import NavbarMain from './navbar'
 import Main from './main'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,16 +8,18 @@ import './main.css'
 
 function App() {
     return (
-        <body>
-            <div className="App">
-                <NavbarMain />
-                <header>
-                    <Main />
-                </header>
-
+            <div className="bodyT">
+                <div className="App">
+                    <NavbarMain />
+                    <header>
+                        <Main />
+                    </header>
+                    <footer>
+                        
+                    </footer>
+                </div>
             </div>
-        </body>
-    );
+    )
 }
 
 export default App;
