@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import logo from './images/logo-small.png'
-import './main.css'
+import logo from '../images/logo-small.png'
+import '../main.css'
 
 export default function NavbarMain(props) {
     return (
@@ -13,8 +13,8 @@ export default function NavbarMain(props) {
                         <Navbar.Brand href="#home" >
                             <img
                                 src={logo}
-                                width="50"
-                                height="50"
+                                width="60"
+                                height="60"
                                 className="d-inline-block align-top"
                                 alt="Pegasus Logo"
                             />

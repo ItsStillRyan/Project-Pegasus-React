@@ -1,9 +1,8 @@
 import React from 'react'
-import NavbarMain from './navbar'
+import NavbarMain from './commons/navbar'
 import Main from './main'
-import MainFooter from './footer'
+import MainFooter from './commons/footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar'
 import './main.css'
 
 

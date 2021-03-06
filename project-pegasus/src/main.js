@@ -3,7 +3,7 @@ import React from "react";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
+import { MDBMask, MDBView} from "mdbreact";
 // css imports
 import './main.css'
 // image imports
@@ -42,60 +42,100 @@ export default function Main(props) {
 
             <div className="cateBtns">
                 <Container fluid>
-                    <Row>
-                        <Col className="image-style show-col">
-                            <a className="cateGalaxies" href="#">
-                            <img
-                                src={galaxies}
-                                width="500"
-                                height="300"
-                                alt="Pegasus Logo"
-                            />
-                            </a>
+                    <Row className="text-center">
+                        <Col className="image-style show-col flex-center">
+                            <MDBView hover>
+                                <a className="cateGalaxies" href="#">
+                                    <img
+                                        src={galaxies}
+                                        width="500"
+                                        height="275"
+                                        alt="galaxies"
+                                    />
+                                    <MDBMask className="flex-center" overlay="black-light" style={{ height: "275px" }}>
+                                        <p className="white-text">Galaxies</p>
+                                    </MDBMask>
+                                </a>
+                            </MDBView>
                         </Col>
-                        <Col className="image-style show-col">
-                            <img
-                                src={starclusters}
-                                width="500"
-                                height="300"
-                                alt="Pegasus Logo"
-                            />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="image-style show-col">
-                            <img
-                                src={planetary}
-                                width="500"
-                                height="300"
-                                alt="Pegasus Logo"
-                            />
-                        </Col>
-                        <Col className="image-style show-col">
-                            <img
-                                src={nebulae}
-                                width="500"
-                                height="300"
-                                alt="Pegasus Logo"
-                            />
+                        <Col className="image-style show-col flex-center">
+                            <MDBView hover>
+                                <a className="cateStars" href="#">
+                                    <img
+                                        src={starclusters}
+                                        width="500"
+                                        height="275"
+                                        alt="starcluster"
+                                    />
+                                    <MDBMask className="flex-center" overlay="black-light" style={{ height: "275px" }}>
+                                        <p className="white-text">Star Clusters</p>
+                                    </MDBMask>
+                                </a>
+                            </MDBView>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col className="image-style show-col">
-                            <img
-                                src={spacecraft}
-                                width="500"
-                                height="120"
-                                alt="Pegasus Logo"
-                            />
+                    <Row className="text-center">
+                        <Col className="image-style show-col flex-center">
+                            <MDBView hover>
+                                <a className="cateStars" href="#">
+                                    <img
+                                        src={planetary}
+                                        width="500"
+                                        height="275"
+                                        alt="planetary"
+                                    />
+                                    <MDBMask className="flex-center" overlay="black-light" style={{ height: "275px" }}>
+                                        <p className="white-text">Planetary</p>
+                                    </MDBMask>
+                                </a>
+                            </MDBView>
                         </Col>
-                        <Col className="image-style show-col">
-                            <img
-                                src={others}
-                                width="500"
-                                height="120"
-                                alt="Pegasus Logo"
-                            />
+                        <Col className="image-style show-col flex-center">
+                            <MDBView hover>
+                                <a className="cateStars" href="#">
+                                    <img
+                                        src={nebulae}
+                                        width="500"
+                                        height="275"
+                                        alt="nebulae"
+                                    />
+                                    <MDBMask className="flex-center" overlay="black-light" style={{ height: "275px" }}>
+                                        <p className="white-text">Nebulae</p>
+                                    </MDBMask>
+                                </a>
+                            </MDBView>
+                        </Col>
+                    </Row>
+                    <Row className="text-center">
+                        <Col className="image-style show-col flex-center">
+                            <MDBView hover>
+                                <a className="cateStars" href="#">
+                                    <img
+                                        src={spacecraft}
+                                        width="500"
+                                        height="120"
+                                        alt="spacecraft"
+                                    />
+                                    <MDBMask className="flex-center" overlay="black-light" style={{ height: "120px" }}>
+                                        <p className="white-text">Space Craft</p>
+                                    </MDBMask>
+                                </a>
+                            </MDBView>
+                        </Col>
+                        <Col className="image-style show-col flex-center">
+                            <MDBView hover>
+                                <a className="cateStars" href="#">
+                                    <img
+                                        src={others}
+                                        width="500"
+                                        height="120"
+                                        alt="other"
+                                    />
+                                    <MDBMask className="flex-center" overlay="black-light" style={{ height: "120px" }}>
+                                        <p className="white-text">Others</p>
+                                    </MDBMask>
+                                </a>
+                            </MDBView>
                         </Col>
                     </Row>
                 </Container>
