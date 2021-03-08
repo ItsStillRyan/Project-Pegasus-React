@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import {Link} from 'react-router-dom'
 //Bootstraps
 import Row from 'react-bootstrap/Row'

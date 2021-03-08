@@ -1,57 +1,69 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import axios from "axios";
 //Bootstraps
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import CardDeck from 'react-bootstrap/CardDeck'
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBRow } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, } from 'mdbreact';
 //CSS
 import '../../main.css'
-//image imports
-import testImg from '../../images/categories-img/galaxies.png'
 //API
-const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io/"
+const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 
 
 export default class Galaxies extends React.Component {
+    // constructor(){
+    //     super()
+    //     this.state = {
+    //         image: " ",
+    //         uname: " ",
+    //         title: " "
+    //     }
+    // }
+
+    // componentDidMount = () =>{
+    //     axios.get(baseURL+"/show").then(response => {
+    //         // console.log(response.data[0].user_uploads.content.img)
+    //         this.setState ({
+    //             image: response.data[1].user_uploads.content.img,
+    //             uname: response.data[1].user_uploads.details.name,
+    //             title: response.data[1].user_uploads.content.title
+    //         })
+    //     })
+
+    // }
+
+    state = {
+        user_details: []
+    }
 
     async componentDidMount() {
         let response = await axios.get(baseURL + "/show")
         this.setState({
-            small_details: response.data
+            user_details: response.data
         })
     }
 
-    renderIndiviCard = () => {
-        let accumulator = []
-        for (let galax_post of this.state.small_details) {
-            accumulator.push(
-                <div key={galax_post._id}>
-                    <Col>
-                        <MDBCard className="cateCardStyle">
-                            <MDBCardImage className="img-fluid" src="https://i.redd.it/qfpg400call61.png" waves />
-                            <MDBCardBody>
-                                <MDBCardTitle>{galax_post[0].user_uploads.content.title}</MDBCardTitle>
-                                
-                                <MDBCardText>{galax_post[0].user_uploads.details.name}</MDBCardText>
-                                <MDBBtn href="#">Engage</MDBBtn>
-                            </MDBCardBody>
-                        </MDBCard>
-                    </Col>
+    renderDetails = () => {
+        let accum = [];
+        for (let s of this.state.user_details) {
+            accum.push(
+                <div key={s._id}>
+                        <Col>
+                            <MDBCard className="cateCardStyle">
+                                <MDBCardImage className="img-fluid cateImgSize" src={s.user_uploads.content.img} waves />
+                                <MDBCardBody>
+                                    <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
+                                    <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
+                                    <MDBBtn href="#">Engage</MDBBtn>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </Col>
                 </div>
             )
         }
-        return accumulator
+        return accum
     }
-
-
-
-
-
-
-
 
 
 
@@ -73,47 +85,11 @@ export default class Galaxies extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-
                 {/* PAST HERE IS THE ACTUAL CONTENT */}
+
                 <div className="cateCardContain">
                     <Row className="cateIndiviRow">
-                        {this.renderIndiviCard}
-                        {/* <Col>
-                            <MDBCard className="cateCardStyle">
-                                <MDBCardImage className="img-fluid" src="https://i.redd.it/qfpg400call61.png" waves />
-                                <MDBCardBody>
-                                    <MDBCardTitle>M42 - Orion Nebula</MDBCardTitle>
-                                    <MDBCardText>
-                                        by u/_snowtrooper_
-                                    </MDBCardText>
-                                    <MDBBtn href="#">Engage</MDBBtn>
-                                </MDBCardBody>
-                            </MDBCard>
-                        </Col>
-                        <Col>
-                            <MDBCard className="cateCardStyle">
-                                <MDBCardImage className="img-fluid" src="https://i.redd.it/qfpg400call61.png" waves />
-                                <MDBCardBody>
-                                    <MDBCardTitle>M42 - Orion Nebula</MDBCardTitle>
-                                    <MDBCardText>
-                                        by u/_snowtrooper_
-                                    </MDBCardText>
-                                    <MDBBtn href="#">Engage</MDBBtn>
-                                </MDBCardBody>
-                            </MDBCard>
-                        </Col>
-                        <Col>
-                            <MDBCard className="cateCardStyle">
-                                <MDBCardImage className="img-fluid" src="https://i.redd.it/qfpg400call61.png" waves />
-                                <MDBCardBody>
-                                    <MDBCardTitle>M42 - Orion Nebula</MDBCardTitle>
-                                    <MDBCardText>
-                                        by u/_snowtrooper_
-                                    </MDBCardText>
-                                    <MDBBtn href="#">Engage</MDBBtn>
-                                </MDBCardBody>
-                            </MDBCard>
-                        </Col> */}
+                        {this.renderDetails()}
                     </Row>
                 </div>
             </React.Fragment>
@@ -121,3 +97,5 @@ export default class Galaxies extends React.Component {
         )
     }
 }
+
+
