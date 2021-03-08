@@ -103,4 +103,22 @@
     color: white;
     font-size:4em;
     font-family:Conthrax;
+    text-align: center;
+    margin-top: 5%;
+}
+.cateSub{
+    color: white;
+    font-size:1em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+
+.cateCardStyle{
+    text-align: center;    
+}
+.cateCardContain{
+    width: 95%;
+    margin:auto;
+    margin-top: 5%;
 }
