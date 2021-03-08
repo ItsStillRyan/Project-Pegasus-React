@@ -46,6 +46,7 @@ const PageNotFound = () => {
                                 height="100"
                                 alt="Back Home"
                             />
+                            
                         </Link>
                     </Col>
                 </Container>
