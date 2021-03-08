@@ -97,3 +97,10 @@
 .logo-sub{
     margin-top:1%;
 }
+
+/* Overall Categories CSS*/
+.cateTitle{
+    color: white;
+    font-size:4em;
+    font-family:Conthrax;
+}

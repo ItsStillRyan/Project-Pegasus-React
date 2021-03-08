@@ -22,7 +22,7 @@ const PageNotFound = () => {
                             <img
                                 src={logo}
                                 width="800"
-                                height="400"
+                                height="500"
                                 alt="404"
                             />
                         </Col>

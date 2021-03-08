@@ -12,7 +12,8 @@ import '../../main.css'
 const Galaxies = () => {
     return(
         <React.Fragment>
-            <div>
+            <div className="cateTitle">
+                <h1>Galaxies</h1>
             </div>
         </React.Fragment>
 
