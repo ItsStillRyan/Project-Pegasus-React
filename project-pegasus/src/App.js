@@ -1,6 +1,6 @@
 import React from 'react'
 import Component from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 //import pages
 import NavbarMain from './commons/navbar'
 import FooterMain from './commons/footer'
@@ -20,40 +20,42 @@ import Others from './pages/Category-cluster/others'
 
 
 
-function App(){
+function App() {
 
     return (
         <div className="bodyT">
             <NavbarMain />
-            <Router>
-                <Switch>
-                    {/* main page */}
-                    <Route exact path="/" component={MainBody} />
-                    
-                    {/* Categories*/}
-                    <Route exact path="/galaxies" component={Galaxies}/>
-                    <Route exact path="/starcluster" component={StarCluster}/>
-                    <Route exact path="/planetary" component={Planetary}/>
-                    <Route exact path="/nebulae" component={Nebulae}/>
-                    <Route exact path="/spacecraft" component={SpaceCraft}/>
-                    <Route exact path="/others" component={Others}/>
+            <div className="divContain">
+                <Router>
+                    <Switch>
+                        {/* main page */}
+                        <Route exact path="/" component={MainBody} />
 
-                    {/* Postings */}
-                    {/* <Route exact path="/" component={}/> */}
+                        {/* Categories*/}
+                        <Route exact path="/galaxies" component={Galaxies} />
+                        <Route exact path="/starcluster" component={StarCluster} />
+                        <Route exact path="/planetary" component={Planetary} />
+                        <Route exact path="/nebulae" component={Nebulae} />
+                        <Route exact path="/spacecraft" component={SpaceCraft} />
+                        <Route exact path="/others" component={Others} />
 
-                    {/* Getting Started */}
-                    <Route exact path="/gettingstarted" component={GettingStarted}/>
+                        {/* Postings */}
+                        {/* <Route exact path="/" component={}/> */}
 
-                    {/* page not found */}
-                    <Route exact path="/lost" component={PageNotFound}/>
-                    <Redirect to="/lost" />
+                        {/* Getting Started */}
+                        <Route exact path="/gettingstarted" component={GettingStarted} />
 
-                </Switch>
-            </Router>
+                        {/* page not found */}
+                        <Route exact path="/lost" component={PageNotFound} />
+                        <Redirect to="/lost" />
+
+                    </Switch>
+                </Router>
+            </div>
             <FooterMain />
         </div>
     )
- 
+
 }
 
 export default App;

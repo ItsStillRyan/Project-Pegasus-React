@@ -4,10 +4,23 @@
     src: local('Conthrax'), url(./fonts/conthrax-sb.ttf);
 }
 
+/* .show-col{
+    border: 1px solid white;
+} */
+
 /* main body css in App.js */
 
 .bodyT{
     background-color: #363f4a;
+}
+
+.divContain{
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 90%;
+    margin-left: 50%;
+    margin-right:50%;
+    transform: translate(-50%);
+    padding-bottom: 5%;
 }
 
 /* navbar css in navbar.js */
@@ -23,6 +36,23 @@
 }
 
 /* footer css in footer.js */
+.footerWholeSize{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.gitIcon{
+    font-size: 4em;
+    text-align: center;
+}
+
+.gitCol{
+    margin-top:5%;
+}
+
+.cateList li{
+    margin-top: 10px;
+}
 
 /* landing page css in main.js */
 .logo-col{
@@ -39,9 +69,6 @@
     font-family: Conthrax;
 }
 
-/* .show-col{
-    border: 1px solid white;
-} */
 
 
 /*Category buttons */
@@ -60,6 +87,13 @@
 .title-sub{
     font-size:2.5em;
     color: white;
-    margin-top: 5%;
-
+    margin-top: 2%;
+}
+.sub-sub{
+    font-size:1.5em;
+    color: white;
+    margin-top: 2%;
+}
+.logo-sub{
+    margin-top:1%;
 }

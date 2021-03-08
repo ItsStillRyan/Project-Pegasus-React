@@ -8,30 +8,43 @@ import '../main.css'
 export default function FooterMain(props) {
     return (
         <React.Fragment>
-            <MDBFooter color="elegant-color-dark" className="font-small pt-4 mt-4">
-                <MDBContainer fluid className="text-center text-md-left">
-                    <MDBRow>
-                        <MDBCol md="6">
-                            <h5 className="title">Footer Content</h5>
-                            <p>
-                                Here you can use rows and columns here to organize your footer
-                                content.
-            </p>
+            <MDBFooter color="elegant-color-dark" className="font-small pt-4">
+                <MDBContainer fluid className="footerWholeSize ">
+                    <MDBRow >
+                        <MDBCol md="6" className="show-col text-center text-md-center">
+                            <h4 className="title gitCol">Find This Project on Github</h4>
+                            <a className="gitIcon" href="https://github.com/ItsStillRyan/Project-Pegasus-React"><i class="fab fa-github"></i></a>
                         </MDBCol>
-                        <MDBCol md="6">
-                            <h5 className="title">Links</h5>
+
+                        <MDBCol md="3" className="show-col cateList">
+                            <h5 className="title">Categories</h5>
                             <ul>
                                 <li className="list-unstyled">
-                                    <a href="#!">Link 1</a>
+                                    <a href="#!">Galaxies</a>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="#!">Link 2</a>
+                                    <a href="#!">Star Clusters</a>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="#!">Link 3</a>
+                                    <a href="#!">Planetary</a>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="#!">Link 4</a>
+                                    <a href="#!">Nebulae</a>
+                                </li>
+                                <li className="list-unstyled">
+                                    <a href="#!">Space Craft</a>
+                                </li>
+                                <li className="list-unstyled">
+                                    <a href="#!">Others</a>
+                                </li>
+                            </ul>
+                        </MDBCol>
+
+                        <MDBCol md="3" className="show-col cateList">
+                            <h5 className="title">Help</h5>
+                            <ul>
+                                <li className="list-unstyled">
+                                    <a href="#!">Getting Started</a>
                                 </li>
                             </ul>
                         </MDBCol>
