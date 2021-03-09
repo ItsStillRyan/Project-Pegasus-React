@@ -4,7 +4,7 @@ import axios from "axios";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 //CSS
 import '../../main.css'
 //API
@@ -48,9 +48,9 @@ export default class Galaxies extends React.Component {
         let accum = [];
         for (let s of this.state.user_details) {
             accum.push(
-                <div key={s._id}>
-                        <Col>
-                            <MDBCard className="cateCardStyle">
+                <div key={s._id} className="cateIndiviRow show-col">
+                        <MDBCol size="3">
+                            <MDBCard className="cateCardStyle" >
                                 <MDBCardImage className="img-fluid cateImgSize" src={s.user_uploads.content.img} waves />
                                 <MDBCardBody>
                                     <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
@@ -58,7 +58,7 @@ export default class Galaxies extends React.Component {
                                     <MDBBtn href="#">Engage</MDBBtn>
                                 </MDBCardBody>
                             </MDBCard>
-                        </Col>
+                       </MDBCol>
                 </div>
             )
         }
@@ -70,28 +70,30 @@ export default class Galaxies extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Container>
-                    <Row>
-                        <Col className="cateTitle">
+                <MDBContainer>
+                    <MDBRow>
+                        <MDBCol className="cateTitle">
                             <p>Galaxies</p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="cateSub">
+                        </MDBCol>
+                    </MDBRow>
+                    <MDBRow>
+                        <MDBCol className="cateSub">
                             <p>
                                 gal•ax•y găl′ək-sē
                         </p>
                             <p>Any of numerous large-scale aggregates of stars, gas, and dust that constitute the universe, containing an average of 100 billion (10<sup>11</sup>) solar masses and ranging in diameter from 1,500 to 300,000 light-years.</p>
-                        </Col>
-                    </Row>
-                </Container>
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>
                 {/* PAST HERE IS THE ACTUAL CONTENT */}
-
                 <div className="cateCardContain">
-                    <Row className="cateIndiviRow">
-                        {this.renderDetails()}
-                    </Row>
+                    <MDBRow className="cateIndiviRow show-col">
+                        
+                            {this.renderDetails()}
+                        
+                    </MDBRow>
                 </div>
+
             </React.Fragment>
 
         )
