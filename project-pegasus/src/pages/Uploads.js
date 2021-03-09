@@ -12,6 +12,15 @@ const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 
 
 export default class Uploads extends React.Component {
+
+
+
+
+
+
+
+
+    
     render() {
         return (
             <React.Fragment>
@@ -25,6 +34,10 @@ export default class Uploads extends React.Component {
                     {/* image preview box row */}
                     <Row>
                         <Col className="imgPreview">
+                            <img
+                                src="https://external-preview.redd.it/5w-oTv6rIA_hBkhPTf6r8Q8aFaA0jausEMJvL6lWzUQ.png?auto=webp&s=88ec8bdcba34b2129c5179d9adb8d914593d3c0c"
+                                alt="Pegasus Logo"
+                            />
                         </Col>
                     </Row>
                 </Container>
@@ -51,29 +64,33 @@ export default class Uploads extends React.Component {
                             </Form.Row>
                         </Form>
                     </div>
+
                     <hr className='hr-light' />
-                    <Form>
-                        <Col>
-                            <Form.Label>Example textarea</Form.Label>
-                            <Form.Control className="imgURL" type="text" placeholder="Name" />
-                        </Col>
-                        <Col>
-                            <Form.Label>Example textarea</Form.Label>
-                            <Form.Control className="imgURL" type="text" placeholder="Location" />
-                        </Col>
-                        <Col>
-                            <Form.Label>Example textarea</Form.Label>
-                            <Form.Control as="textarea" rows={3} />
-                        </Col>
-                        <Col>
-                            <Form.Label>Example textarea</Form.Label>
-                            <Form.Control as="textarea" rows={3} />
-                        </Col>
-                        <Col>
-                            <Form.Label>Example textarea</Form.Label>
-                            <Form.Control as="textarea" rows={3} />
-                        </Col>
-                    </Form>
+
+                    <div className="persDetails">
+                        <Form>
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="formGridEmail">
+                                    <Form.Label>Name / Username</Form.Label>
+                                    <Form.Control className="imgURL" type="text" placeholder="Name" />
+                                </Form.Group>
+                                <Form.Group as={Col} controlId="formGridEmail">
+                                    <Form.Label>Location</Form.Label>
+                                    <Form.Control className="imgURL" type="text" placeholder="Location" />
+                                </Form.Group>
+                            </Form.Row>
+
+                            <Col className="persDetailsCol">
+                                <Form.Label>Equipment Used</Form.Label>
+                                <Form.Control as="textarea" rows={3} placeholder="What Equipments did you use?" />
+                            </Col>
+                            <Col className="persDetailsCol">
+                                <Form.Label>Acquisitions / Processing</Form.Label>
+                                <Form.Control as="textarea" rows={3} placeholder="Any post-processing needed for the image?" />
+                            </Col>
+
+                        </Form>
+                    </div>
                 </div>
             </React.Fragment>
         )

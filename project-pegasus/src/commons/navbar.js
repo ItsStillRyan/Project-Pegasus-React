@@ -26,7 +26,7 @@ export default function NavbarMain(props) {
 
                     <Nav.Link href="#home" className="navLink mr-5 ml-3"><p>Categories</p></Nav.Link>
                     <Nav.Link href="/gettingstarted" className="navLink ml-2 mr-5"><p>Getting Started</p></Nav.Link>
-                    <Nav.Link href="/uploads" className="navLink ml-2"><p>Uploads</p></Nav.Link>
+                    <Nav.Link href="/uploads" className="navLink ml-2"><p>Upload a picture!</p></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

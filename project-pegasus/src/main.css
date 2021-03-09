@@ -69,8 +69,6 @@
     font-family: Conthrax;
 }
 
-
-
 /*Category buttons */
 .cateBtns{
     margin-top: 20%;
@@ -81,6 +79,35 @@
 }
 .image-style img{
     margin-bottom: 10%;
+}
+/* Overall Categories CSS*/
+.cateTitle{
+    color: white;
+    font-size:4em;
+    font-family:Conthrax;
+    text-align: center;
+    margin-top: 5%;
+}
+.cateSub{
+    color: white;
+    font-size:1em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.cateCardStyle{
+    margin-bottom: 7%;
+    width:22rem;
+}
+.cateCardContain{
+    width: 85%;
+    margin:auto;
+    margin-top: 5%;
+}
+.cateIndiviRow{
+    margin-bottom: 2%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: auto;
 }
 
 /* 404 catch page in 404.js */
@@ -97,6 +124,7 @@
 .logo-sub{
     margin-top:1%;
 }
+
 /* Uploads css for uploads.js */
 .uploadsTitle{
     color: white;
@@ -113,43 +141,22 @@
 .imgPreview{
     border: 3px solid white;
     height: 40rem;
-    
+    width: 50rem;
+}
+.imgPreview img{
+    margin: auto;
+    height: 90%;
+    margin-right: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, 5%);
 }
 .imgDetails{
     margin-bottom: 3%;
     margin-top: 3%;
 }
-
-
-/* Overall Categories CSS*/
-.cateTitle{
+.persDetails{
     color: white;
-    font-size:4em;
-    font-family:Conthrax;
-    text-align: center;
-    margin-top: 5%;
 }
-.cateSub{
-    color: white;
-    font-size:1em;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-}
-
-
-.cateCardStyle{
-    margin-bottom: 7%;
-    width:22rem;
-}
-.cateCardContain{
-    width: 85%;
-    margin:auto;
-    margin-top: 5%;
-}
-
-.cateIndiviRow{
-    margin-bottom: 2%;
-    margin-left:auto;
-    margin-right: auto;
-    margin-top: auto;
+.persDetailsCol{
+    margin-top: 2%;
 }
