@@ -97,6 +97,29 @@
 .logo-sub{
     margin-top:1%;
 }
+/* Uploads css for uploads.js */
+.uploadsTitle{
+    color: white;
+    font-size:4em;
+    font-family:Conthrax;
+    text-align: center;
+    margin-top: 5%;
+}
+.formWidth{
+    width: 60%;
+    margin:auto;
+}
+
+.imgPreview{
+    border: 3px solid white;
+    height: 40rem;
+    
+}
+.imgDetails{
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
 
 /* Overall Categories CSS*/
 .cateTitle{
@@ -115,10 +138,8 @@
 
 
 .cateCardStyle{
-    text-align: center; 
     margin-bottom: 7%;
     width:22rem;
-    /* margin-left: 10%; */
 }
 .cateCardContain{
     width: 85%;

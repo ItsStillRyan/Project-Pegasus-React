@@ -7,7 +7,7 @@ import FooterMain from './commons/footer'
 import MainBody from './pages/main'
 import PageNotFound from './pages/404'
 import GettingStarted from './pages/getting-started'
-import Postings from './pages/postings'
+import Uploads from './pages/Uploads'
 // categories
 import Galaxies from './pages/Category-cluster/galaxies'
 import StarCluster from './pages/Category-cluster/starcluster'
@@ -40,7 +40,7 @@ function App() {
                         <Route exact path="/others" component={Others} />
 
                         {/* Postings */}
-                        {/* <Route exact path="/" component={}/> */}
+                        <Route exact path="/uploads" component={Uploads}/>
 
                         {/* Getting Started */}
                         <Route exact path="/gettingstarted" component={GettingStarted} />

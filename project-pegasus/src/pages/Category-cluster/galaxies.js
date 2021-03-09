@@ -4,7 +4,7 @@ import axios from "axios";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
 //CSS
 import '../../main.css'
 //API
@@ -49,16 +49,21 @@ export default class Galaxies extends React.Component {
         for (let s of this.state.user_details) {
             accum.push(
                 <div key={s._id} className="cateIndiviRow show-col">
-                        <MDBCol size="3">
-                            <MDBCard className="cateCardStyle" >
-                                <MDBCardImage className="img-fluid cateImgSize" src={s.user_uploads.content.img} waves />
-                                <MDBCardBody>
-                                    <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
-                                    <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
-                                    <MDBBtn href="#">Engage</MDBBtn>
-                                </MDBCardBody>
-                            </MDBCard>
-                       </MDBCol>
+                    <MDBCol size="3">
+                        <MDBCard className="cateCardStyle" >
+                            <MDBCardImage className="img-fluid cateImgSize" src={s.user_uploads.content.img} waves />
+                            <MDBCardBody className='elegant-color white-text rounded-bottom'>
+                                <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
+                                <hr className='hr-light' />
+                                <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
+                                <a href='#!' className='black-text d-flex justify-content-end'>
+                                    <h5 className='white-text'>Read more
+                                    <MDBIcon icon='angle-double-right' className='ml-2' />
+                                    </h5>
+                                </a>
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
                 </div>
             )
         }
@@ -88,9 +93,9 @@ export default class Galaxies extends React.Component {
                 {/* PAST HERE IS THE ACTUAL CONTENT */}
                 <div className="cateCardContain">
                     <MDBRow className="cateIndiviRow show-col">
-                        
-                            {this.renderDetails()}
-                        
+
+                        {this.renderDetails()}
+
                     </MDBRow>
                 </div>
 
