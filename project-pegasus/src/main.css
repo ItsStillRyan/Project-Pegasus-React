@@ -70,8 +70,15 @@
 }
 
 /*Category buttons */
+.mainCateTitle{
+    font-size:3em;
+    color:white;
+    font-family: Conthrax;
+    text-align: center;
+    margin-bottom: 5%;
+}
 .cateBtns{
-    margin-top: 20%;
+    margin-top: 25%;
 }
 .cateBtns p{
     font-size: 2em;

@@ -1,10 +1,10 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // bootstrap imports
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import { MDBMask, MDBView} from "mdbreact";
+import { MDBMask, MDBView } from "mdbreact";
 // css imports
 import '../main.css'
 // image imports
@@ -36,7 +36,25 @@ const Main = () => {
                     </Row>
                 </Container>
             </div>
+            <div className="mainCateTitle">
+                    <Container>
+                        <Row>
+                            <Col>
+                                <i class="fas fa-chevron-down"></i>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
             <div className="cateBtns">
+                <div className="mainCateTitle">
+                    <Container>
+                        <Row>
+                            <Col>
+                                Categories
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
                 <Container fluid>
                     <Row className="text-center">
                         <Col className="image-style show-col flex-center">
