@@ -13,7 +13,57 @@ const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 
 
 export default class Uploads extends React.Component {
+    state = {
+        details:[{
+            fnameN: "",
+            locationN: ""
+        }],
+        fname: "",
+        location: ""
+    }
 
+    addpost = async event => {
+        let newPost = {
+            fnameN:this.state.fname,
+            locationN:this.state.location
+        }
+
+        let response = await axios.post(baseURL + "/upload", newPost)
+        newPost._id = response.data._id
+
+        let clone = [...this.state.details]
+
+        clone.push(newPost)
+
+        this.setState({
+            details: clone
+        })
+    }
+
+    //Form Field updates
+    updateFormField = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    //displaying categories
+    async componentDidMount() {
+        let response = await axios.get(baseURL + "/showCate")
+        this.setState({
+            web_cats: response.data
+        })
+    }
+
+    // renderCate = () => {
+    //     let accum = []
+    //     for (let x in this.state.web_cats.categories){
+    //         accum.push(
+    //         <option value="{x}">{x[0].categories[x]}</option>
+    //         )
+    //     }
+    //     return accum
+    // }
 
     render() {
         return (
@@ -29,7 +79,7 @@ export default class Uploads extends React.Component {
                     <Row>
                         <Col className="imgPreview">
                             <img
-                                src="https://external-preview.redd.it/5w-oTv6rIA_hBkhPTf6r8Q8aFaA0jausEMJvL6lWzUQ.png?auto=webp&s=88ec8bdcba34b2129c5179d9adb8d914593d3c0c"
+                                src=""
                                 alt="Pegasus Logo"
                             />
                         </Col>
@@ -50,9 +100,7 @@ export default class Uploads extends React.Component {
                                         custom
                                     >
                                         <option value="0">Choose Category</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        {/* {this.renderCate()} */}
                                     </Form.Control>
                                 </Form.Group>
                             </Form.Row>
@@ -66,7 +114,7 @@ export default class Uploads extends React.Component {
                             <Form.Row>
                                 <Form.Group as={Col} controlId="">
                                     <Form.Label>Name / Username</Form.Label>
-                                    <Form.Control className="imgURL" type="text" placeholder="Name" />
+                                    <Form.Control className="imgURL" type="text" placeholder="Name" name="fname" value={this.state.fname} onChange={this.updateFormField} />
                                 </Form.Group>
                                 <Form.Group as={Col} controlId="">
                                     <Form.Label>Location</Form.Label>
@@ -90,8 +138,8 @@ export default class Uploads extends React.Component {
                         </Form>
                     </div>
                     <div className="uploadBtn">
-                    <Button variant="primary" size="lg"  active>
-                        Upload
+                        <Button variant="primary" size="lg" onClick={this.addpost}active>
+                            Upload
                     </Button>
                     </div>
                 </div>
