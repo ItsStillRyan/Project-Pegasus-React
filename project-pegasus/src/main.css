@@ -162,5 +162,24 @@
 }
 .uploadBtn{
    margin-top:3%;
-
+}
+/* getting started CSS */
+.gsContain{
+    width: 90%;
+    margin:auto;
+}
+.gsTitle{
+    color: white;
+    font-size:4em;
+    font-family:Conthrax;
+    text-align: center;
+    margin-bottom: 6%;
+    margin-top:5%;
+}
+.tabsTitle{
+    color: white;
+    font-family:Conthrax;
+}
+.gsContent{
+    color:white;
 }

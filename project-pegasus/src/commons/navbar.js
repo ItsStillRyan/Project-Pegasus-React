@@ -24,7 +24,7 @@ export default function NavbarMain(props) {
                             />
                         </Navbar.Brand>
 
-                    <Nav.Link href="#home" className="navLink mr-5 ml-3"><p>Categories</p></Nav.Link>
+                    <Nav.Link href="/" className="navLink mr-5 ml-3"><p>Categories</p></Nav.Link>
                     <Nav.Link href="/gettingstarted" className="navLink ml-2 mr-5"><p>Getting Started</p></Nav.Link>
                     <Nav.Link href="/uploads" className="navLink ml-2"><p>Upload a picture!</p></Nav.Link>
                     </Nav>
