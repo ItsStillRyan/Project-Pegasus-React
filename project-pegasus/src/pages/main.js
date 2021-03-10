@@ -40,7 +40,7 @@ const Main = () => {
                     <Container>
                         <Row>
                             <Col>
-                                <i class="fas fa-chevron-down"></i>
+                                <i className="fas fa-chevron-down"></i>
                             </Col>
                         </Row>
                     </Container>

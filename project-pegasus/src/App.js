@@ -1,5 +1,4 @@
 import React from 'react'
-import Component from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 //import pages
 import NavbarMain from './commons/navbar'

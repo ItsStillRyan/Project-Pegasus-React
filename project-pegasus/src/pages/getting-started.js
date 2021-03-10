@@ -31,7 +31,7 @@ export default class GettingStarted extends React.Component {
                 </Container>
 
                 <div className="gsContain">
-                    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+                    <Tab.Container defaultActiveKey="first">
                         <Row>
                             <Col sm={3}>
                                 <Nav variant="pills" className="flex-column tabsTitle">
@@ -44,6 +44,7 @@ export default class GettingStarted extends React.Component {
                                     </Nav.Item>
                                 </Nav>
                             </Col>
+
                             <Col sm={9} className="gsContent">
                                 <Tab.Content>
                                     <Tab.Pane eventKey="first">
@@ -52,7 +53,9 @@ export default class GettingStarted extends React.Component {
 
 
                                     <Tab.Pane eventKey="second">
+
                                         <Accordion defaultActiveKey="0">
+
                                             <Card>
                                                 <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="0">Click me!</Accordion.Toggle>
                                                 <Accordion.Collapse eventKey="0" className="gsAccordBack">
@@ -72,8 +75,8 @@ export default class GettingStarted extends React.Component {
                                             </Card>
 
                                             <Card>
-                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="1">Click me! </Accordion.Toggle>
-                                                <Accordion.Collapse eventKey="1" className="gsAccordBack">
+                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="2">Click me! </Accordion.Toggle>
+                                                <Accordion.Collapse eventKey="2" className="gsAccordBack">
                                                     <Card.Body>
                                                         Sed in dui dui. Suspendisse at ornare purus. Etiam lobortis congue fringilla. Curabitur ornare pellentesque suscipit. Nullam in arcu sed nulla congue molestie tempor vel metus. Mauris ullamcorper vitae sem at iaculis. In nec mi orci. Nullam dignissim efficitur nisi vel vestibulum. Nunc id magna nec erat placerat porta a at massa. Praesent ac quam magna. Praesent vel suscipit diam. In hac habitasse platea dictumst. Nullam ultrices felis odio, eu facilisis ipsum imperdiet rutrum. Mauris nec venenatis dui. Pellentesque nisi quam, aliquet et blandit at, fermentum ac felis. Phasellus elit sem, euismod vel metus a, placerat malesuada mi.
                                                     </Card.Body>
@@ -81,8 +84,8 @@ export default class GettingStarted extends React.Component {
                                             </Card>
 
                                             <Card>
-                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="1">Click me! </Accordion.Toggle>
-                                                <Accordion.Collapse eventKey="1" className="gsAccordBack">
+                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="3">Click me! </Accordion.Toggle>
+                                                <Accordion.Collapse eventKey="3" className="gsAccordBack">
                                                     <Card.Body>
                                                         Sed in dui dui. Suspendisse at ornare purus. Etiam lobortis congue fringilla. Curabitur ornare pellentesque suscipit. Nullam in arcu sed nulla congue molestie tempor vel metus. Mauris ullamcorper vitae sem at iaculis. In nec mi orci. Nullam dignissim efficitur nisi vel vestibulum. Nunc id magna nec erat placerat porta a at massa. Praesent ac quam magna. Praesent vel suscipit diam. In hac habitasse platea dictumst. Nullam ultrices felis odio, eu facilisis ipsum imperdiet rutrum. Mauris nec venenatis dui. Pellentesque nisi quam, aliquet et blandit at, fermentum ac felis. Phasellus elit sem, euismod vel metus a, placerat malesuada mi.
                                                     </Card.Body>

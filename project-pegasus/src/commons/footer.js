@@ -13,7 +13,7 @@ export default function FooterMain(props) {
                     <MDBRow >
                         <MDBCol md="6" className="show-col text-center text-md-center">
                             <h4 className="title gitCol">Find This Project on Github</h4>
-                            <a className="gitIcon" href="https://github.com/ItsStillRyan/Project-Pegasus-React"><i class="fab fa-github"></i></a>
+                            <a className="gitIcon" href="https://github.com/ItsStillRyan/Project-Pegasus-React"><i className="fab fa-github"></i></a>
                         </MDBCol>
 
                         <MDBCol md="3" className="show-col cateList">

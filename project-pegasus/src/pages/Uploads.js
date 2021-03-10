@@ -14,29 +14,24 @@ const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 
 export default class Uploads extends React.Component {
     state = {
-        details:[{
-            fnameN: "",
-            locationN: ""
-        }],
+        user_details: [],
         fname: "",
-        location: ""
+        location: "",
+        pIndex: "",
+        category:"",
+        img: "",
+        title: "",
+        equipment: [],
+        processing: [],
+        cateList:[]
     }
 
-    addpost = async event => {
-        let newPost = {
-            fnameN:this.state.fname,
-            locationN:this.state.location
-        }
 
-        let response = await axios.post(baseURL + "/upload", newPost)
-        newPost._id = response.data._id
-
-        let clone = [...this.state.details]
-
-        clone.push(newPost)
-
+    //displaying categories
+    async componentDidMount() {
+        let response = await axios.get(baseURL + "/showCate")
         this.setState({
-            details: clone
+            web_cats: response.data
         })
     }
 
@@ -47,22 +42,45 @@ export default class Uploads extends React.Component {
         })
     }
 
-    //displaying categories
-    async componentDidMount() {
-        let response = await axios.get(baseURL + "/showCate")
+    //add entry
+    uploadPosts = async event => {
+        let newPost = {
+            user_uploads: {
+                details: {
+                    name: this.state.fname,
+                    location: this.state.location,
+                    pIndex: this.state.pIndex,
+                    category:this.state.category
+                },
+                content: {
+                    img: this.state.img,
+                    title: this.state.title,
+                    equipment: this.state.equipment,
+                    processing: this.state.processing,
+                }
+            }
+        }
+
+        let response = await axios.post(baseURL + "/upload", newPost)
+
+        newPost._id = response.data._id;
+
+        let clone = [...this.state.user_details]
+
+        clone.push(newPost)
+
         this.setState({
-            web_cats: response.data
+            user_details:clone
         })
     }
 
+
+
     // renderCate = () => {
     //     let accum = []
-    //     for (let x in this.state.web_cats.categories){
-    //         accum.push(
-    //         <option value="{x}">{x[0].categories[x]}</option>
-    //         )
+    //     for (let t of this.state.cateList){
+    //         accum.push
     //     }
-    //     return accum
     // }
 
     render() {
@@ -79,8 +97,8 @@ export default class Uploads extends React.Component {
                     <Row>
                         <Col className="imgPreview">
                             <img
-                                src=""
-                                alt="Pegasus Logo"
+                                src={this.state.img}
+                        
                             />
                         </Col>
                     </Row>
@@ -89,14 +107,23 @@ export default class Uploads extends React.Component {
                     <div className="imgDetails">
                         <Form>
                             <Form.Row>
-                                <Form.Group as={Col} controlId="">
-                                    <Form.Control className="imgURL" type="text" placeholder="Image URL" />
+                            <Col className="imgTitle">
+                                <Form.Label>Title</Form.Label>
+                                <Form.Control type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.updateFormField} />
+                            </Col>
+                            </Form.Row>
+
+                            <Form.Row>
+                                <Form.Group as={Col} >
+                                    <Form.Control className="imgURL" type="text" placeholder="Image URL"  name="img" value={this.state.img} onChange={this.updateFormField} />
                                 </Form.Group>
-                                <Form.Group as={Col} controlId="">
+                                <Form.Group as={Col} >
                                     <Form.Control
                                         as="select"
                                         className="mr-sm-2"
-                                        id="inlineFormCustomSelect"
+                                        name="category" 
+                                        value={this.state.category} 
+                                        onChange={this.updateFormField} 
                                         custom
                                     >
                                         <option value="0">Choose Category</option>
@@ -112,33 +139,33 @@ export default class Uploads extends React.Component {
                     <div className="persDetails">
                         <Form>
                             <Form.Row>
-                                <Form.Group as={Col} controlId="">
+                                <Form.Group as={Col} >
                                     <Form.Label>Name / Username</Form.Label>
                                     <Form.Control className="imgURL" type="text" placeholder="Name" name="fname" value={this.state.fname} onChange={this.updateFormField} />
                                 </Form.Group>
-                                <Form.Group as={Col} controlId="">
+                                <Form.Group as={Col} >
                                     <Form.Label>Location</Form.Label>
-                                    <Form.Control className="imgURL" type="text" placeholder="Location" />
+                                    <Form.Control className="imgURL" type="text" placeholder="Location" name="location" value={this.state.location} onChange={this.updateFormField} />
                                 </Form.Group>
-                                <Form.Group as={Col} sm="2" controlId="">
+                                <Form.Group as={Col} sm="2" >
                                     <Form.Label>Personal Index</Form.Label>
-                                    <Form.Control className="imgURL" type="text" placeholder="4 digits" />
+                                    <Form.Control className="imgURL" type="text" placeholder="4 digits" name="pIndex" value={this.state.pIndex} onChange={this.updateFormField} />
                                 </Form.Group>
                             </Form.Row>
 
                             <Col className="persDetailsCol">
                                 <Form.Label>Equipment Used</Form.Label>
-                                <Form.Control as="textarea" rows={3} placeholder="What Equipments did you use?" />
+                                <Form.Control as="textarea" rows={3} placeholder="What Equipments did you use?" name="equipment" value={this.state.equipment} onChange={this.updateFormField} />
                             </Col>
                             <Col className="persDetailsCol">
                                 <Form.Label>Acquisitions / Processing</Form.Label>
-                                <Form.Control as="textarea" rows={3} placeholder="Any post-processing needed for the image?" />
+                                <Form.Control as="textarea" rows={3} placeholder="Any post-processing needed for the image?" name="processing" value={this.state.processing} onChange={this.updateFormField} />
                             </Col>
 
                         </Form>
                     </div>
                     <div className="uploadBtn">
-                        <Button variant="primary" size="lg" onClick={this.addpost}active>
+                        <Button variant="primary" size="lg" onClick={this.uploadPosts} active>
                             Upload
                     </Button>
                     </div>
