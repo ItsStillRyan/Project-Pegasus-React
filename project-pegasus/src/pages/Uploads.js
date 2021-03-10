@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 //CSS
 import '../main.css'
 //API
@@ -14,13 +15,6 @@ const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 export default class Uploads extends React.Component {
 
 
-
-
-
-
-
-
-    
     render() {
         return (
             <React.Fragment>
@@ -45,10 +39,10 @@ export default class Uploads extends React.Component {
                     <div className="imgDetails">
                         <Form>
                             <Form.Row>
-                                <Form.Group as={Col} controlId="formGridEmail">
+                                <Form.Group as={Col} controlId="">
                                     <Form.Control className="imgURL" type="text" placeholder="Image URL" />
                                 </Form.Group>
-                                <Form.Group as={Col} controlId="formGridEmail">
+                                <Form.Group as={Col} controlId="">
                                     <Form.Control
                                         as="select"
                                         className="mr-sm-2"
@@ -70,13 +64,17 @@ export default class Uploads extends React.Component {
                     <div className="persDetails">
                         <Form>
                             <Form.Row>
-                                <Form.Group as={Col} controlId="formGridEmail">
+                                <Form.Group as={Col} controlId="">
                                     <Form.Label>Name / Username</Form.Label>
                                     <Form.Control className="imgURL" type="text" placeholder="Name" />
                                 </Form.Group>
-                                <Form.Group as={Col} controlId="formGridEmail">
+                                <Form.Group as={Col} controlId="">
                                     <Form.Label>Location</Form.Label>
                                     <Form.Control className="imgURL" type="text" placeholder="Location" />
+                                </Form.Group>
+                                <Form.Group as={Col} sm="2" controlId="">
+                                    <Form.Label>Personal Index</Form.Label>
+                                    <Form.Control className="imgURL" type="text" placeholder="4 digits" />
                                 </Form.Group>
                             </Form.Row>
 
@@ -90,6 +88,11 @@ export default class Uploads extends React.Component {
                             </Col>
 
                         </Form>
+                    </div>
+                    <div className="uploadBtn">
+                    <Button variant="primary" size="lg"  active>
+                        Upload
+                    </Button>
                     </div>
                 </div>
             </React.Fragment>
