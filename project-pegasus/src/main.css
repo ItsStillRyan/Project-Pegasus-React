@@ -186,7 +186,17 @@
 .tabsTitle{
     color: white;
     font-family:Conthrax;
+    font-size: 1.2em;
 }
 .gsContent{
     color:white;
+}
+
+.gsAccord{
+    color: black;
+    font-family:Conthrax;
+    font-size: 1.1em
+}
+.gsAccordBack{
+    background-color:#1a1d20;
 }

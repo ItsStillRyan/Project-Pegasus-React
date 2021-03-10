@@ -11,6 +11,7 @@ import Tab from 'react-bootstrap/Tab'
 import TabContainer from 'react-bootstrap/TabContainer'
 import TabContent from 'react-bootstrap/TabContent'
 import Nav from 'react-bootstrap/Nav'
+import Accordion from 'react-bootstrap/Accordion'
 //CSS
 import '../main.css'
 
@@ -39,7 +40,7 @@ export default class GettingStarted extends React.Component {
                                         <hr className='hr-light' />
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link eventKey="second"><p>Getting Started with Astro-Photography</p></Nav.Link>
+                                        <Nav.Link eventKey="second"><p>Getting Started with Astrophotography</p></Nav.Link>
                                     </Nav.Item>
                                 </Nav>
                             </Col>
@@ -51,10 +52,44 @@ export default class GettingStarted extends React.Component {
 
 
                                     <Tab.Pane eventKey="second">
-                                        Nulla mattis enim sed metus consectetur commodo. Sed eu venenatis magna, sed scelerisque lectus. Aenean eget tempor nisl. Donec tincidunt malesuada diam, id eleifend diam consectetur faucibus. Aliquam accumsan sed odio sed pretium. Curabitur eu diam sed turpis blandit tristique in sed nibh. Ut nec rutrum justo. Praesent a orci a tellus malesuada ullamcorper vitae sed urna. Duis porttitor tempor lectus eu consequat. Integer imperdiet in erat eu mollis.
+                                        <Accordion defaultActiveKey="0">
+                                            <Card>
+                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="0">Click me!</Accordion.Toggle>
+                                                <Accordion.Collapse eventKey="0" className="gsAccordBack">
+                                                    <Card.Body>
+                                                        Nulla mattis enim sed metus consectetur commodo. Sed eu venenatis magna, sed scelerisque lectus. Aenean eget tempor nisl. Donec tincidunt malesuada diam, id eleifend diam consectetur faucibus. Aliquam accumsan sed odio sed pretium. Curabitur eu diam sed turpis blandit tristique in sed nibh. Ut nec rutrum justo. Praesent a orci a tellus malesuada ullamcorper vitae sed urna. Duis porttitor tempor lectus eu consequat. Integer imperdiet in erat eu mollis.
+                                                    </Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
 
-                                        Sed in dui dui. Suspendisse at ornare purus. Etiam lobortis congue fringilla. Curabitur ornare pellentesque suscipit. Nullam in arcu sed nulla congue molestie tempor vel metus. Mauris ullamcorper vitae sem at iaculis. In nec mi orci. Nullam dignissim efficitur nisi vel vestibulum. Nunc id magna nec erat placerat porta a at massa. Praesent ac quam magna. Praesent vel suscipit diam. In hac habitasse platea dictumst. Nullam ultrices felis odio, eu facilisis ipsum imperdiet rutrum. Mauris nec venenatis dui. Pellentesque nisi quam, aliquet et blandit at, fermentum ac felis. Phasellus elit sem, euismod vel metus a, placerat malesuada mi.
-                                </Tab.Pane>
+                                            <Card>
+                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="1">Click me! </Accordion.Toggle>
+                                                <Accordion.Collapse eventKey="1" className="gsAccordBack">
+                                                    <Card.Body>
+                                                        Sed in dui dui. Suspendisse at ornare purus. Etiam lobortis congue fringilla. Curabitur ornare pellentesque suscipit. Nullam in arcu sed nulla congue molestie tempor vel metus. Mauris ullamcorper vitae sem at iaculis. In nec mi orci. Nullam dignissim efficitur nisi vel vestibulum. Nunc id magna nec erat placerat porta a at massa. Praesent ac quam magna. Praesent vel suscipit diam. In hac habitasse platea dictumst. Nullam ultrices felis odio, eu facilisis ipsum imperdiet rutrum. Mauris nec venenatis dui. Pellentesque nisi quam, aliquet et blandit at, fermentum ac felis. Phasellus elit sem, euismod vel metus a, placerat malesuada mi.
+                                                    </Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+
+                                            <Card>
+                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="1">Click me! </Accordion.Toggle>
+                                                <Accordion.Collapse eventKey="1" className="gsAccordBack">
+                                                    <Card.Body>
+                                                        Sed in dui dui. Suspendisse at ornare purus. Etiam lobortis congue fringilla. Curabitur ornare pellentesque suscipit. Nullam in arcu sed nulla congue molestie tempor vel metus. Mauris ullamcorper vitae sem at iaculis. In nec mi orci. Nullam dignissim efficitur nisi vel vestibulum. Nunc id magna nec erat placerat porta a at massa. Praesent ac quam magna. Praesent vel suscipit diam. In hac habitasse platea dictumst. Nullam ultrices felis odio, eu facilisis ipsum imperdiet rutrum. Mauris nec venenatis dui. Pellentesque nisi quam, aliquet et blandit at, fermentum ac felis. Phasellus elit sem, euismod vel metus a, placerat malesuada mi.
+                                                    </Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+
+                                            <Card>
+                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="1">Click me! </Accordion.Toggle>
+                                                <Accordion.Collapse eventKey="1" className="gsAccordBack">
+                                                    <Card.Body>
+                                                        Sed in dui dui. Suspendisse at ornare purus. Etiam lobortis congue fringilla. Curabitur ornare pellentesque suscipit. Nullam in arcu sed nulla congue molestie tempor vel metus. Mauris ullamcorper vitae sem at iaculis. In nec mi orci. Nullam dignissim efficitur nisi vel vestibulum. Nunc id magna nec erat placerat porta a at massa. Praesent ac quam magna. Praesent vel suscipit diam. In hac habitasse platea dictumst. Nullam ultrices felis odio, eu facilisis ipsum imperdiet rutrum. Mauris nec venenatis dui. Pellentesque nisi quam, aliquet et blandit at, fermentum ac felis. Phasellus elit sem, euismod vel metus a, placerat malesuada mi.
+                                                    </Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
+                                    </Tab.Pane>
                                 </Tab.Content>
                             </Col>
                         </Row>
