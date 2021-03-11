@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 //Bootstraps
-import {MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
 //CSS
 import '../../main.css'
 //API
@@ -9,26 +9,6 @@ const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 
 
 export default class Galaxies extends React.Component {
-    // constructor(){
-    //     super()
-    //     this.state = {
-    //         image: " ",
-    //         uname: " ",
-    //         title: " "
-    //     }
-    // }
-
-    // componentDidMount = () =>{
-    //     axios.get(baseURL+"/show").then(response => {
-    //         // console.log(response.data[0].user_uploads.content.img)
-    //         this.setState ({
-    //             image: response.data[1].user_uploads.content.img,
-    //             uname: response.data[1].user_uploads.details.name,
-    //             title: response.data[1].user_uploads.content.title
-    //         })
-    //     })
-
-    // }
 
     state = {
         user_details: []
@@ -43,26 +23,29 @@ export default class Galaxies extends React.Component {
 
     renderDetails = () => {
         let accum = [];
+
         for (let s of this.state.user_details) {
-            accum.push(
-                <div key={s._id} className="cateIndiviRow show-col">
-                    <MDBCol size="3">
-                        <MDBCard className="cateCardStyle" >
-                            <MDBCardImage className="img-fluid cateImgSize" src={s.user_uploads.content.img} waves />
-                            <MDBCardBody className='elegant-color white-text rounded-bottom'>
-                                <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
-                                <hr className='hr-light' />
-                                <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
-                                <a href='#!' className='black-text d-flex justify-content-end'>
-                                    <h5 className='white-text'>Read more
+            if (s.user_uploads.details.category === "Galaxies") {
+                accum.push(
+                    <div key={s._id} className="cateIndiviRow show-col">
+                        <MDBCol size="3">
+                            <MDBCard className="cateCardStyle" >
+                                <MDBCardImage className="img-fluid cateImgSize" src={s.user_uploads.content.img} waves />
+                                <MDBCardBody className='elegant-color white-text rounded-bottom'>
+                                    <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
+                                    <hr className='hr-light' />
+                                    <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
+                                    <a href='#!' className='black-text d-flex justify-content-end'>
+                                        <h5 className='white-text'>Engage
                                     <MDBIcon icon='angle-double-right' className='ml-2' />
-                                    </h5>
-                                </a>
-                            </MDBCardBody>
-                        </MDBCard>
-                    </MDBCol>
-                </div>
-            )
+                                        </h5>
+                                    </a>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </div>
+                )
+            }
         }
         return accum
     }

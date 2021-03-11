@@ -7,6 +7,7 @@ import MainBody from './pages/main'
 import PageNotFound from './pages/404'
 import GettingStarted from './pages/getting-started'
 import Uploads from './pages/Uploads'
+import IndiviPost from './pages/indiviPost'
 // categories
 import Galaxies from './pages/Category-cluster/galaxies'
 import StarCluster from './pages/Category-cluster/starcluster'
@@ -40,6 +41,9 @@ function App() {
 
                         {/* Postings */}
                         <Route exact path="/uploads" component={Uploads}/>
+
+                        {/* Individual Posts */}
+                        <Route exact path="/individual/{_id}" component={IndiviPost}/>
 
                         {/* Getting Started */}
                         <Route exact path="/gettingstarted" component={GettingStarted} />

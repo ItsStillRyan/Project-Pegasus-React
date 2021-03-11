@@ -18,21 +18,35 @@ export default class Uploads extends React.Component {
         fname: "",
         location: "",
         pIndex: "",
-        category:"",
+        category: "",
         img: "",
         title: "",
         equipment: [],
         processing: [],
-        cateList:[]
+        cateList: [],
+        web_cats: []
     }
 
 
-    //displaying categories
+    //loading categories
     async componentDidMount() {
         let response = await axios.get(baseURL + "/showCate")
         this.setState({
             web_cats: response.data
         })
+    }
+
+    renderCategories = () => {
+        let accum = []
+        for (let x of this.state.web_cats) {
+            for (let i = 0; i < x.categories.length; i++) {
+                accum.push(
+                    <option value={x.categories[i]}>{x.categories[i]}</option>
+
+                )
+            }
+        }
+        return accum
     }
 
     //Form Field updates
@@ -50,7 +64,7 @@ export default class Uploads extends React.Component {
                     name: this.state.fname,
                     location: this.state.location,
                     pIndex: this.state.pIndex,
-                    category:this.state.category
+                    category: this.state.category
                 },
                 content: {
                     img: this.state.img,
@@ -60,28 +74,18 @@ export default class Uploads extends React.Component {
                 }
             }
         }
+            let response = await axios.post(baseURL + "/upload", newPost)
 
-        let response = await axios.post(baseURL + "/upload", newPost)
+            newPost._id = response.data._id;
 
-        newPost._id = response.data._id;
+            let clone = [...this.state.user_details]
 
-        let clone = [...this.state.user_details]
+            clone.push(newPost)
 
-        clone.push(newPost)
-
-        this.setState({
-            user_details:clone
-        })
+            this.setState({
+                user_details: clone
+            })
     }
-
-
-
-    // renderCate = () => {
-    //     let accum = []
-    //     for (let t of this.state.cateList){
-    //         accum.push
-    //     }
-    // }
 
     render() {
         return (
@@ -98,7 +102,7 @@ export default class Uploads extends React.Component {
                         <Col className="imgPreview">
                             <img
                                 src={this.state.img}
-                        
+
                             />
                         </Col>
                     </Row>
@@ -107,27 +111,29 @@ export default class Uploads extends React.Component {
                     <div className="imgDetails">
                         <Form>
                             <Form.Row>
-                            <Col className="imgTitle">
-                                <Form.Label>Title</Form.Label>
-                                <Form.Control type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.updateFormField} />
-                            </Col>
+                                <Col className="imgTitle">
+                                    <Form.Label>Title</Form.Label>
+                                    <Form.Control type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.updateFormField} />
+                                </Col>
                             </Form.Row>
 
                             <Form.Row>
                                 <Form.Group as={Col} >
-                                    <Form.Control className="imgURL" type="text" placeholder="Image URL"  name="img" value={this.state.img} onChange={this.updateFormField} />
+                                    <Form.Control className="imgURL" type="text" placeholder="Image URL" name="img" value={this.state.img} onChange={this.updateFormField} />
                                 </Form.Group>
                                 <Form.Group as={Col} >
                                     <Form.Control
                                         as="select"
                                         className="mr-sm-2"
-                                        name="category" 
-                                        value={this.state.category} 
-                                        onChange={this.updateFormField} 
+                                        name="category"
+                                        value={this.state.category}
+                                        onChange={this.updateFormField}
                                         custom
                                     >
-                                        <option value="0">Choose Category</option>
-                                        {/* {this.renderCate()} */}
+                                        <option value="0">--Choose Category--</option>
+                                        {this.renderCategories()}
+
+
                                     </Form.Control>
                                 </Form.Group>
                             </Form.Row>
