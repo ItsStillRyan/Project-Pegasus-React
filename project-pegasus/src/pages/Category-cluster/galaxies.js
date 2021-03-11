@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 //Bootstraps
 import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
+import { Link } from 'react-router-dom'
 //CSS
 import '../../main.css'
 //API
@@ -21,6 +22,8 @@ export default class Galaxies extends React.Component {
         })
     }
 
+
+
     renderDetails = () => {
         let accum = [];
 
@@ -35,10 +38,7 @@ export default class Galaxies extends React.Component {
                                     <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
                                     <hr className='hr-light' />
                                     <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
-                                    <a href='#!' className='black-text d-flex justify-content-end'>
-                                        <h5 className='white-text'>Engage
-                                    <MDBIcon icon='angle-double-right' className='ml-2' />
-                                        </h5>
+                                    <a href="" className='black-text d-flex justify-content-end'><h5 className='white-text'>Engage<MDBIcon icon='angle-double-right' className='ml-2' /></h5>
                                     </a>
                                 </MDBCardBody>
                             </MDBCard>

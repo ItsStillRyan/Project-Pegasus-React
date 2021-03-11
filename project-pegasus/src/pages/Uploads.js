@@ -74,17 +74,19 @@ export default class Uploads extends React.Component {
                 }
             }
         }
-            let response = await axios.post(baseURL + "/upload", newPost)
+        let response = await axios.post(baseURL + "/upload", newPost)
 
-            newPost._id = response.data._id;
+        newPost._id = response.data._id;
 
-            let clone = [...this.state.user_details]
+        let clone = [...this.state.user_details]
 
-            clone.push(newPost)
+        clone.push(newPost)
 
-            this.setState({
-                user_details: clone
-            })
+        this.setState({
+            user_details: clone
+        })
+
+        window.location.reload(false);
     }
 
     render() {
