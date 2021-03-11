@@ -15,22 +15,35 @@ const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 export default class indiviPost extends React.Component {
 
     state = {
-        user_details: []
+        user_details: [],
+        name: "",
+        location: "",
+        pIndex: "",
+        img: "",
+        title: "",
+        equipment: "",
+        processing: "",
     }
 
     async componentDidMount() {
         let response = await axios.get(baseURL + "/show/" + this.props.match.params._id)
-        let { postID } = this.props.match.params
+        console.log(response.data.user_uploads.details.name)
         this.setState({
             user_details: response.data,
-            postID
+            name: response.data.user_uploads.details.name,
+            location: response.data.user_uploads.details.location,
+            pIndex: response.data.user_uploads.details.pIndex,
+            img: response.data.user_uploads.content.img,
+            title: response.data.user_uploads.content.title,
+            equipment: response.data.user_uploads.content.equipment,
+            processing: response.data.user_uploads.content.processing,
+
         })
+
     }
 
-    // renderPost = renPost => {
-    //     return (
-    //     )
-    // }
+    renderPost = renPost => {
+    }
 
 
 
@@ -38,21 +51,20 @@ export default class indiviPost extends React.Component {
         return (
             <React.Fragment>
                 <Container>
-                    {/* title row */}
-                    <Row>
-                        <Col className="postTitle">
-                            <p></p>
-                        </Col>
-                    </Row>
                     {/* image preview box row */}
                     <Row>
-                        <Col>
+                        <Col className="postImg">
+                            <img
+                                src={this.state.img}
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="postTitle">
+                            <p>{this.state.title}</p>
                         </Col>
                     </Row>
                 </Container>
-
-
-
             </React.Fragment>
         )
     }

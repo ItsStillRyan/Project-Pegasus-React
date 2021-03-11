@@ -212,3 +212,22 @@
 }
 
 /* individual post */
+.postTitle{
+    color: white;
+    font-size:2em;
+    font-family:Conthrax;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.postImg{
+    height: 60rem;
+    width: 70rem;
+}
+.postImg img{
+    margin: auto;
+    height: 90%;
+    margin-right: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, 5%);
+}
