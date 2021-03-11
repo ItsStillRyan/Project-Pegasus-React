@@ -26,7 +26,6 @@ export default class Galaxies extends React.Component {
 
     renderDetails = () => {
         let accum = [];
-
         for (let s of this.state.user_details) {
             if (s.user_uploads.details.category === "Galaxies") {
                 accum.push(
@@ -38,7 +37,8 @@ export default class Galaxies extends React.Component {
                                     <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
                                     <hr className='hr-light' />
                                     <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
-                                    <a href="" className='black-text d-flex justify-content-end'><h5 className='white-text'>Engage<MDBIcon icon='angle-double-right' className='ml-2' /></h5>
+                                    
+                                    <a href={"/galaxies/"+s._id} className='black-text d-flex justify-content-end'><h5 className='white-text'>Engage<MDBIcon icon='angle-double-right' className='ml-2' /></h5>
                                     </a>
                                 </MDBCardBody>
                             </MDBCard>

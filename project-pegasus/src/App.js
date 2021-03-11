@@ -43,7 +43,7 @@ function App() {
                         <Route exact path="/uploads" component={Uploads}/>
 
                         {/* Individual Posts */}
-                        <Route exact path="/individual/{_id}" component={IndiviPost}/>
+                        <Route exact path="/galaxies/:_id" component={IndiviPost}/>
 
                         {/* Getting Started */}
                         <Route exact path="/gettingstarted" component={GettingStarted} />

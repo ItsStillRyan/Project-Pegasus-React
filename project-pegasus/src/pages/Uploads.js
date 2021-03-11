@@ -35,7 +35,6 @@ export default class Uploads extends React.Component {
             web_cats: response.data
         })
     }
-
     renderCategories = () => {
         let accum = []
         for (let x of this.state.web_cats) {
@@ -48,14 +47,12 @@ export default class Uploads extends React.Component {
         }
         return accum
     }
-
     //Form Field updates
     updateFormField = event => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
-
     //add entry
     uploadPosts = async event => {
         let newPost = {
