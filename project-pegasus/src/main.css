@@ -116,6 +116,13 @@
     margin-right: auto;
     margin-top: auto;
 }
+.filterText{
+    color:white;
+}
+.filterWidth{
+    width: 70%;
+    margin:auto;
+}
 
 /* 404 catch page in 404.js */
 .title-sub{
@@ -205,6 +212,3 @@
 }
 
 /* individual post */
-.test1{
-    color:white;
-}

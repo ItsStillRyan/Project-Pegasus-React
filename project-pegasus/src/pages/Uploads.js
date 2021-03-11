@@ -112,7 +112,7 @@ export default class Uploads extends React.Component {
                             <Form.Row>
                                 <Col className="imgTitle">
                                     <Form.Label>Title</Form.Label>
-                                    <Form.Control type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.updateFormField} />
+                                    <Form.Control type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.updateFormField} required/>
                                 </Col>
                             </Form.Row>
 
