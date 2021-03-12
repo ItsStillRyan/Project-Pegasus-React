@@ -71,15 +71,15 @@ export default class Galaxies extends React.Component {
                 <MDBContainer>
                     <MDBRow>
                         <MDBCol className="cateTitle">
-                            <p>Nebulae</p>
+                            <p>Planetary</p>
                         </MDBCol>
                     </MDBRow>
                     <MDBRow>
                         <MDBCol className="cateSub">
                             <p>
-                                neb•u•lae nĕb′yə-lə
+                                plan•et•a•ry plăn′ĭ-tĕr″ē
                         </p>
-                            <p>A diffuse cloud of interstellar dust or gas or both, visible as luminous patches or areas of darkness depending on the way the mass absorbs or reflects incident light or emits its own light.</p>
+                            <p>	A celestial body that orbits the sun, has sufficient mass to assume nearly a round shape, clears out dust and debris from the neighborhood around its orbit, and is not a satellite of another planet.</p>
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
