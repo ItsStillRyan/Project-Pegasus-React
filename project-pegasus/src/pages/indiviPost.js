@@ -112,16 +112,18 @@ export default class indiviPost extends React.Component {
                                 <p>{this.state.processing}</p>
                             </Col>
                         </Row>
-                        <Row className="edit-row">
-                            <Col className="editBtn" sm="2">
-                                <Button variant="outline-light">Edit</Button>
-                            </Col>
-                            <Col>
-                                <Form.Group as={Col} sm="4" >
-                                    <Form.Control className="pindexinput" type="text" placeholder="Personal index" name="pIndex" value={this.state.pIndexCheck} onChange={this.updateFormField} />
-                                </Form.Group>
-                            </Col>
-                        </Row>
+
+                        {/* edit button and pindex box */}
+                        <div className="edit-row">
+                            <Row>
+                                <Col xs={2}className="editBtn">
+                                    <Button variant="outline-light">Edit</Button>
+                                </Col>
+                                <Col xs={3}>
+                                        <Form.Control className="pindexinput" type="text" placeholder="Personal index" name="pIndex" value={this.state.pIndexCheck} onChange={this.updateFormField} />
+                                </Col>
+                            </Row>
+                        </div>
                     </div>
                     <hr className='hr-light' />
                 </Container>
@@ -133,7 +135,7 @@ export default class indiviPost extends React.Component {
                         </Col>
                     </Row>
                     <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Control as="textarea" rows={3} placeholder="Add your Comments"/>
+                        <Form.Control as="textarea" rows={3} placeholder="Add your Comments" />
                     </Form.Group>
                     <hr className='hr-light' />
                 </Container>
