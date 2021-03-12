@@ -23,7 +23,7 @@ export default class indiviPost extends React.Component {
         title: "",
         equipment: "",
         processing: "",
-        pIndexCheck:""
+        pIndexCheck: ""
     }
 
     async componentDidMount() {
@@ -69,16 +69,16 @@ export default class indiviPost extends React.Component {
                         </Row>
                         {/* subtitle - name */}
                         <Row>
-                            <Col className="postDivider"md="1">
+                            <Col className="postDivider" md="1">
                                 <p>|</p>
                             </Col>
                             <Col className="postsubTitle">
                                 <p><span>Photography by: </span>{this.state.name}</p>
                             </Col>
-                            <Col className="postDivider"md="1">
+                            <Col className="postDivider" md="1">
                                 <p>|</p>
                             </Col>
-                        {/* subtitle - location */}
+                            {/* subtitle - location */}
                             <Col className="postsubTitle">
                                 <p><span>Location: </span>{this.state.location}</p>
                             </Col>
@@ -109,20 +109,33 @@ export default class indiviPost extends React.Component {
 
                         <Row>
                             <Col className="equip-AQPDesc">
-                            <p>{this.state.processing}</p>
+                                <p>{this.state.processing}</p>
                             </Col>
                         </Row>
-                         <Row>
-                            <Col className="editBtn">
-                             <Button variant="outline-light">Edit</Button>
+                        <Row className="edit-row">
+                            <Col className="editBtn" sm="2">
+                                <Button variant="outline-light">Edit</Button>
                             </Col>
                             <Col>
-                            <Form.Control className="imgURL" type="text" placeholder="Insert personal index" name="pIndex" value={this.state.pIndexCheck} onChange={this.updateFormField} />
+                                <Form.Group as={Col} sm="4" >
+                                    <Form.Control className="pindexinput" type="text" placeholder="Personal index" name="pIndex" value={this.state.pIndexCheck} onChange={this.updateFormField} />
+                                </Form.Group>
                             </Col>
                         </Row>
-
-
                     </div>
+                    <hr className='hr-light' />
+                </Container>
+
+                <Container>
+                    <Row>
+                        <Col className="commentTitle">
+                            <p>Comments</p>
+                        </Col>
+                    </Row>
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                        <Form.Control as="textarea" rows={3} placeholder="Add your Comments"/>
+                    </Form.Group>
+                    <hr className='hr-light' />
                 </Container>
             </React.Fragment>
         )

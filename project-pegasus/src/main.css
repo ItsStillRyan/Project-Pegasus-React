@@ -68,6 +68,13 @@
     font-size: 5em;
     font-family: Conthrax;
 }
+.mainTitleSub{
+    font-size:1.2em;
+    color:white;
+    font-family: Conthrax;
+    text-align: center;
+    margin-top: 10%;
+}
 
 /*Category buttons */
 .mainCateTitle{
@@ -255,4 +262,16 @@
     color:white;
     font-size:1em;
 }
+.pindexinput {
+   margin-top:5%;
+}
+.edit-row{
+    margin-top: 5%;
+}
+.commentTitle{
+    color: white;
+    font-size:1.6em;
+    font-family:Conthrax;
+    text-align: center;
 
+}

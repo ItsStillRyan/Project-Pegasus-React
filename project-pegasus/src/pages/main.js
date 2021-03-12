@@ -36,8 +36,15 @@ const Main = () => {
                     </Row>
                 </Container>
             </div>
-            <div className="mainCateTitle">
+            <div className="mainTitleSub">
                     <Container>
+                        <Row>
+                            <Col>
+                                <p>
+                                    Seventh largest constellation in the sky, occupying an area of 1121 square degrees. It is located in the fourth quadrant of the northern hemisphere (NQ4) and can be seen at latitudes between +90° and -60°
+                                </p>
+                            </Col>
+                        </Row>
                         <Row>
                             <Col>
                                 <i className="fas fa-chevron-down"></i>
