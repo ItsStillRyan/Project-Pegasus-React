@@ -41,17 +41,11 @@ export default class indiviPost extends React.Component {
         })
 
     }
-
-    renderPost = renPost => {
-    }
-
-
-
     render() {
         return (
             <React.Fragment>
                 <Container>
-                    {/* image preview box row */}
+                    {/* image */}
                     <Row>
                         <Col className="postImg">
                             <img
@@ -59,11 +53,62 @@ export default class indiviPost extends React.Component {
                             />
                         </Col>
                     </Row>
-                    <Row>
-                        <Col className="postTitle">
-                            <p>{this.state.title}</p>
-                        </Col>
-                    </Row>
+                    <div className="postTextWidth">
+                        {/* title */}
+                        <Row>
+                            <Col className="postTitle">
+                                <p>{this.state.title}</p>
+                            </Col>
+                        </Row>
+                        {/* subtitle - name */}
+                        <Row>
+                            <Col className="postDivider"md="1">
+                                <p>|</p>
+                            </Col>
+                            <Col className="postsubTitle">
+                                <p><span>Photography by: </span>{this.state.name}</p>
+                            </Col>
+                            <Col className="postDivider"md="1">
+                                <p>|</p>
+                            </Col>
+                        {/* subtitle - location */}
+                            <Col className="postsubTitle">
+                                <p><span>Location: </span>{this.state.location}</p>
+                            </Col>
+                            <Col className="postDivider" md="1">
+                                <p>|</p>
+                            </Col>
+                        </Row>
+
+                        <hr className='hr-light' />
+
+                        {/* Equipment */}
+                        <Row>
+                            <Col className="equip-AQPTitle">
+                                <p>Equipment Used</p>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="equip-AQPDesc">
+                                <p>{this.state.equipment}</p>
+                            </Col>
+                        </Row>
+                        {/* Aquisitions and Processing */}
+                        <Row>
+                            <Col className="equip-AQPTitle">
+                                <p>Aquisitions and Processing</p>
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            <Col className="equip-AQPDesc">
+                            <p>{this.state.processing}</p>
+                            </Col>
+                        </Row>
+
+
+
+                    </div>
                 </Container>
             </React.Fragment>
         )

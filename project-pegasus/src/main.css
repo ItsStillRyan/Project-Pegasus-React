@@ -212,22 +212,47 @@
 }
 
 /* individual post */
+.postDivider{
+    color:white;
+    text-align: center;
+}
+.postImg img{
+    margin: auto;
+    width: 80%;
+    margin-right: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, 5%);
+    margin-bottom: 5%;
+}
+.postTextWidth{
+    width: 80%;
+    margin:auto;
+}
 .postTitle{
     color: white;
     font-size:2em;
     font-family:Conthrax;
     text-align: center;
-    margin-top: 2%;
+}
+.postsubTitle{
+    color: white;
+    font-size:0.9em;
+    font-family:Conthrax;
+    text-align: center;
+}
+.postsubTitle span{
+    color: white;
+    font-size:0.8em;
+    opacity: 0.7;
+}
+.equip-AQPTitle{
+    color: white;
+    font-size:1.4em;
+    font-family:Conthrax;
+    text-align: center;
+}
+.equip-AQPDesc{
+    color:white;
+    font-size:1em;
 }
 
-.postImg{
-    height: 60rem;
-    width: 70rem;
-}
-.postImg img{
-    margin: auto;
-    height: 90%;
-    margin-right: 50%;
-    margin-left: 50%;
-    transform: translate(-50%, 5%);
-}
