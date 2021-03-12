@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import FormCheck from 'react-bootstrap/FormCheck'
+import FormFile from 'react-bootstrap/FormFile'
 //CSS
 import '../main.css'
 //API
@@ -26,7 +28,6 @@ export default class Uploads extends React.Component {
         cateList: [],
         web_cats: []
     }
-
 
     //loading categories
     async componentDidMount() {
@@ -82,9 +83,10 @@ export default class Uploads extends React.Component {
         this.setState({
             user_details: clone
         })
-
-        window.location.reload(false);
     }
+
+    
+
 
     render() {
         return (
@@ -111,8 +113,10 @@ export default class Uploads extends React.Component {
                         <Form>
                             <Form.Row>
                                 <Col className="imgTitle">
-                                    <Form.Label>Title</Form.Label>
-                                    <Form.Control type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.updateFormField} required/>
+                                    <Form.Group >
+                                        <Form.Label>Title</Form.Label>
+                                        <Form.Control type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.updateFormField}/>
+                                    </Form.Group>
                                 </Col>
                             </Form.Row>
 
@@ -120,7 +124,7 @@ export default class Uploads extends React.Component {
                                 <Form.Group as={Col} >
                                     <Form.Control className="imgURL" type="text" placeholder="Image URL" name="img" value={this.state.img} onChange={this.updateFormField} />
                                 </Form.Group>
-                                <Form.Group as={Col} >
+                                <Form.Group as={Col}>
                                     <Form.Control
                                         as="select"
                                         className="mr-sm-2"
@@ -170,7 +174,7 @@ export default class Uploads extends React.Component {
                         </Form>
                     </div>
                     <div className="uploadBtn">
-                        <Button variant="primary" size="lg" onClick={this.uploadPosts} active>
+                        <Button type="submit" variant="primary" size="lg" onClick={this.uploadPosts} active>
                             Upload
                     </Button>
                     </div>
