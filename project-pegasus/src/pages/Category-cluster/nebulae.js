@@ -42,13 +42,13 @@ export default class Galaxies extends React.Component {
                 <div key={s._id} className="cateIndiviRow show-col">
                     <MDBCol size="3">
                         <MDBCard className="cateCardStyle" >
-                            <Link to={"/galaxies/" + s._id}>
+                            <Link to={"/nebulae/" + s._id}>
                                 <MDBCardImage className="img-fluid cateImgSize" src={s.user_uploads.content.img} waves /></Link>
                             <MDBCardBody className='elegant-color white-text rounded-bottom'>
                                 <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
                                 <hr className='hr-light' />
                                 <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
-                                <Link to={"/galaxies/" + s._id}>
+                                <Link to={"/nebulae/" + s._id}>
                                     <a className='black-text d-flex justify-content-end'><h5 className='white-text'>Engage<MDBIcon icon='angle-double-right' className='ml-2' /></h5>
                                     </a>
                                 </Link>
