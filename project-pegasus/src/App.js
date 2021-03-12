@@ -44,6 +44,12 @@ function App() {
 
                         {/* Individual Posts */}
                         <Route exact path="/galaxies/:_id" component={IndiviPost}/>
+                        <Route exact path="/starcluster/:_id" component={IndiviPost}/>
+                        <Route exact path="/planetary/:_id" component={IndiviPost}/>
+                        <Route exact path="/nebulae/:_id" component={IndiviPost}/>
+                        <Route exact path="/spacecraft/:_id" component={IndiviPost}/>
+                        <Route exact path="/others/:_id" component={IndiviPost}/>
+                        
 
                         {/* Getting Started */}
                         <Route exact path="/gettingstarted" component={GettingStarted} />

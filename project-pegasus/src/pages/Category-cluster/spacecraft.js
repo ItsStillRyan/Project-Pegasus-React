@@ -11,7 +11,7 @@ import '../../main.css'
 const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 
 
-export default class Galaxies extends React.Component {
+export default class SpaceCraft extends React.Component {
 
     state = {
         user_details: [],

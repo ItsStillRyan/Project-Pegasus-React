@@ -10,13 +10,12 @@ import '../../main.css'
 //API
 const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 
-
 export default class Galaxies extends React.Component {
 
     state = {
         user_details: [],
     }
-
+    
     async componentDidMount() {
         let response = await axios.get(baseURL + "/galaxies")
         this.setState({

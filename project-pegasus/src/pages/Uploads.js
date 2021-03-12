@@ -83,6 +83,8 @@ export default class Uploads extends React.Component {
         this.setState({
             user_details: clone
         })
+
+        window.location.reload(false);
     }
 
     

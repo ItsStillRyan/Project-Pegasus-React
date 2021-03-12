@@ -23,6 +23,7 @@ export default class indiviPost extends React.Component {
         title: "",
         equipment: "",
         processing: "",
+        pIndexCheck:""
     }
 
     async componentDidMount() {
@@ -40,6 +41,12 @@ export default class indiviPost extends React.Component {
 
         })
 
+    }
+    //Form Field updates
+    updateFormField = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
     render() {
         return (
@@ -105,7 +112,14 @@ export default class indiviPost extends React.Component {
                             <p>{this.state.processing}</p>
                             </Col>
                         </Row>
-
+                         <Row>
+                            <Col className="editBtn">
+                             <Button variant="outline-light">Edit</Button>
+                            </Col>
+                            <Col>
+                            <Form.Control className="imgURL" type="text" placeholder="Insert personal index" name="pIndex" value={this.state.pIndexCheck} onChange={this.updateFormField} />
+                            </Col>
+                        </Row>
 
 
                     </div>
