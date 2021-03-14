@@ -79,7 +79,7 @@ export default class NavbarMain extends React.Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <NavDropdown title={
-                                <span className="navLink ml-5">Dropdown</span>
+                                <span className="navLink ml-5">Categories</span>
                             } id="collasible-nav-dropdown">
                                 {this.renderCategories()}
 
