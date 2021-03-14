@@ -38,33 +38,6 @@ export default class NavbarMain extends React.Component {
         return (
             <React.Fragment>
                 <Navbar expand="lg" bg="dark" varient="dark">
-                    {/* <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
-
-                        <Navbar.Brand href="/">
-                            <img
-                                src={logo}
-                                width="60"
-                                height="60"
-                                className="d-inline-block align-top"
-                                alt="Pegasus Logo"
-                            />
-                        </Navbar.Brand>
-
-                        <NavDropdown title="Category" id="collasible-nav-dropdown" className="navLink">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown>
-
-
-                        <Nav.Link href="/gettingstarted" className="navLink ml-2 mr-5 show-col"><p>Getting Started</p></Nav.Link>
-                        <Nav.Link href="/uploads" className="navLink ml-2 show-col"><p>Upload into the Index</p></Nav.Link>
-                    </Nav>
-                </Navbar.Collapse> */}
-
                     <Navbar.Brand href="/">
                         <img
                             src={logo}
@@ -84,8 +57,8 @@ export default class NavbarMain extends React.Component {
                                 {this.renderCategories()}
 
                             </NavDropdown>
-                            <Nav.Link href="#features"><span className="navLink ml-5">Getting Started</span></Nav.Link>
-                            <Nav.Link href="#pricing"><span className="navLink ml-5">Upload into the Index</span></Nav.Link>
+                            <Nav.Link href="/gettingstarted"><span className="navLink ml-5">Getting Started</span></Nav.Link>
+                            <Nav.Link href="/uploads"><span className="navLink ml-5">Upload into the Index</span></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

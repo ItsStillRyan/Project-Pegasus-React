@@ -6,7 +6,9 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
+import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol, MDBIcon, MDBBtn } from 'mdbreact';
 //CSS
 import '../main.css'
 //API
@@ -23,10 +25,12 @@ export default class indiviPost extends React.Component {
         equipment: "",
         processing: "",
         pIndexCheck: ""
+
     }
 
     async componentDidMount() {
         let response = await axios.get(baseURL + "/show/" + this.props.match.params._id)
+        
         console.log(response.data.user_uploads.details.name)
         this.setState({
             user_details: response.data,
@@ -47,6 +51,17 @@ export default class indiviPost extends React.Component {
             [event.target.name]: event.target.value
         })
     }
+
+    submitHandler = event => {
+        event.preventDefault();
+        event.target.className += " was-validated";
+        if (event.target.reportValidity()) {
+        }
+
+        console.log(event.target.reportValidity())
+
+    };
+
     render() {
         return (
             <React.Fragment>
@@ -86,9 +101,7 @@ export default class indiviPost extends React.Component {
                                 <p>|</p>
                             </Col>
                         </Row>
-
                         <hr className='hr-light' />
-
                         {/* Equipment */}
                         <Row>
                             <Col className="equip-AQPTitle">
@@ -106,23 +119,38 @@ export default class indiviPost extends React.Component {
                                 <p>Aquisitions and Processing</p>
                             </Col>
                         </Row>
-
                         <Row>
                             <Col className="equip-AQPDesc">
                                 <p>{this.state.processing}</p>
                             </Col>
                         </Row>
-
                         {/* edit button and pindex box */}
                         <div className="edit-row">
-                            <Row>
-                                <Col xs={2}className="editBtn">
-                                    <Button variant="outline-light">Edit</Button>
-                                </Col>
-                                <Col xs={3}>
-                                        <Form.Control className="pindexinput" type="text" placeholder="Personal index" name="pIndex" value={this.state.pIndexCheck} onChange={this.updateFormField} />
-                                </Col>
-                            </Row>
+                            <MDBContainer>
+                                <form
+                                    className="needs-validation"
+                                    onSubmit={this.submitHandler}
+                                    noValidate>
+                                    <MDBRow>
+                                        <MDBCol md="2">
+                                            <MDBBtn color="primary" type="submit">Edit</MDBBtn>
+
+                                        </MDBCol>
+                                        <MDBCol md="2" className="mb-3 mt-2">
+                                            <input
+                                                value={this.state.pIndexCheck}
+                                                name="pIndex"
+                                                onChange={this.updateFormField}
+                                                type="text"
+                                                className="form-control"
+                                                placeholder="Index"
+                                                required
+                                            />
+                                            <div className="invalid-feedback">Invalid Personal Index</div>
+                                        </MDBCol>
+                                    </MDBRow>
+                                </form>
+                            </MDBContainer>
                         </div>
                     </div>
                     <hr className='hr-light' />
