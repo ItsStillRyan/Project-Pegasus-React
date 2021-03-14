@@ -63,6 +63,7 @@ export default class Update extends React.Component {
             [event.target.name]: event.target.value
         })
     }
+
     //update post
     updatePost = () => {
         let newPost = {
@@ -82,19 +83,33 @@ export default class Update extends React.Component {
             }
         }
 
-        let clone = this.state.user_details.slice()
+        // let clone = this.state.user_details.slice()
 
-        let index = -1
-        for(let i=0; i< this.state.user_details.length; i++){
-            let currentPost = this.state.user_details[i]
-            if(currentPost._id == newPost._id){
-                index = i
-                break
-            }
-        }
+        // let index = -1
+        // for(let i=0; i< this.state.user_details.length; i++){
+        //     let currentPost = this.state.user_details[i]
+        //     if(currentPost._id == newPost._id){
+        //         index = i
+        //         break
+        //     }
+        // }
 
-        clone[index] = newPost
+        // clone[index] = newPost
 
+        // this.setState({
+        //     user_details: clone
+        // })
+    }
+
+
+    //delete
+    deletePost = post => {
+        let index = this.state.user_details.findIndex(t => t._id === post._id)
+
+        let clone = [
+            ...this.state.user_details.slice(0, index),
+            ...this.state.user_details.slice(index + 1)
+        ]
         this.setState({
             user_details: clone
         })
@@ -111,6 +126,7 @@ export default class Update extends React.Component {
         console.log(event.target.reportValidity())
 
     };
+
 
 
 
@@ -265,6 +281,11 @@ export default class Update extends React.Component {
                                         </MDBRow>
                                         <MDBBtn color="primary" type="submit">Upload</MDBBtn>
                                     </form>
+                                </MDBCol>
+                            </MDBRow>
+                            <MDBRow>
+                                <MDBCol className="mt-5">
+                                    <MDBBtn color="danger" type="submit" onClick={this.deletePost}>Delete</MDBBtn>
                                 </MDBCol>
                             </MDBRow>
                         </MDBContainer>

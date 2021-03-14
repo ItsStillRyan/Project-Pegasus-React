@@ -30,7 +30,7 @@ export default class indiviPost extends React.Component {
 
     async componentDidMount() {
         let response = await axios.get(baseURL + "/show/" + this.props.match.params._id)
-        
+
         console.log(response.data.user_uploads.details.name)
         this.setState({
             user_details: response.data,
@@ -55,11 +55,9 @@ export default class indiviPost extends React.Component {
     submitHandler = event => {
         event.preventDefault();
         event.target.className += " was-validated";
-        if (event.target.reportValidity()) {
+        if (event.target.reportValidity() && this.state.pIndexCheck == this.state.pIndex) {
+            this.props.history.push('/update/' + this.props.match.params._id)
         }
-
-        console.log(event.target.reportValidity())
-
     };
 
     render() {
@@ -136,10 +134,10 @@ export default class indiviPost extends React.Component {
                                             <MDBBtn color="primary" type="submit">Edit</MDBBtn>
 
                                         </MDBCol>
-                                        <MDBCol md="2" className="mb-3 mt-2">
+                                        <MDBCol md="2" className="ml-3 mt-2">
                                             <input
                                                 value={this.state.pIndexCheck}
-                                                name="pIndex"
+                                                name="pIndexCheck"
                                                 onChange={this.updateFormField}
                                                 type="text"
                                                 className="form-control"
