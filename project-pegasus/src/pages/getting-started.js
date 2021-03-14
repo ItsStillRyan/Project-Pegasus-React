@@ -1,15 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
 //Bootstraps
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
-import TabContainer from 'react-bootstrap/TabContainer'
-import TabContent from 'react-bootstrap/TabContent'
 import Nav from 'react-bootstrap/Nav'
 import Accordion from 'react-bootstrap/Accordion'
 //CSS

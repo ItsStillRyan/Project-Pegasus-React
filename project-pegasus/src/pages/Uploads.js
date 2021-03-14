@@ -4,10 +4,7 @@ import axios from "axios";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import FormCheck from 'react-bootstrap/FormCheck'
-import FormFile from 'react-bootstrap/FormFile'
+import { MDBContainer, MDBRow, MDBCol, MDBBtn,} from 'mdbreact';
 //CSS
 import '../main.css'
 //API
@@ -86,8 +83,18 @@ export default class Uploads extends React.Component {
 
         window.location.reload(false);
     }
+    submitHandler = event => {
+        event.preventDefault();
+        event.target.className += " was-validated";
+        if (event.target.reportValidity()){
+            this.uploadPosts()
+        }
+        
+        console.log(event.target.reportValidity())
+        
+    };
 
-    
+
 
 
     render() {
@@ -105,80 +112,144 @@ export default class Uploads extends React.Component {
                         <Col className="imgPreview">
                             <img
                                 src={this.state.img}
-
+                                alt={this.state.title}
                             />
                         </Col>
                     </Row>
                 </Container>
                 <div className="formWidth">
                     <div className="imgDetails">
-                        <Form>
-                            <Form.Row>
-                                <Col className="imgTitle">
-                                    <Form.Group >
-                                        <Form.Label>Title</Form.Label>
-                                        <Form.Control type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.updateFormField}/>
-                                    </Form.Group>
-                                </Col>
-                            </Form.Row>
-
-                            <Form.Row>
-                                <Form.Group as={Col} >
-                                    <Form.Control className="imgURL" type="text" placeholder="Image URL" name="img" value={this.state.img} onChange={this.updateFormField} />
-                                </Form.Group>
-                                <Form.Group as={Col}>
-                                    <Form.Control
-                                        as="select"
-                                        className="mr-sm-2"
-                                        name="category"
-                                        value={this.state.category}
-                                        onChange={this.updateFormField}
-                                        custom
+                        <MDBContainer>
+                            <MDBRow>
+                                <MDBCol>
+                                    <form
+                                        className="needs-validation"
+                                        onSubmit={this.submitHandler}
+                                        noValidate
                                     >
-                                        <option value="0">--Choose Category--</option>
-                                        {this.renderCategories()}
+                                        <MDBRow>
+                                            <MDBCol>
+                                                <input
+                                                    value={this.state.title}
+                                                    name="title"
+                                                    onChange={this.updateFormField}
+                                                    type="text"
+                                                    className="form-control"
+                                                    placeholder="Title"
+                                                    required
+                                                />
+                                                <div className="invalid-feedback">Give your post a title!</div>
+                                                <div className="valid-feedback">Looks good!</div>
+                                            </MDBCol>
+                                        </MDBRow>
 
+                                        <MDBRow>
+                                            <MDBCol md="6" className="mb-3 mt-3">
+                                                <input
+                                                    value={this.state.img}
+                                                    onChange={this.updateFormField}
+                                                    type="text"
+                                                    className="form-control"
+                                                    name="img"
+                                                    placeholder="Image URL"
+                                                    required
+                                                />
+                                                <div className="invalid-feedback">Post your photograph!</div>
+                                                <div className="valid-feedback">Looks good!</div>
+                                            </MDBCol>
 
-                                    </Form.Control>
-                                </Form.Group>
-                            </Form.Row>
-                        </Form>
-                    </div>
+                                            <MDBCol md="6" className="mb-3 mt-3">
+                                                <select className="browser-default custom-select"
+                                                    name="category"
+                                                    value={this.state.category}
+                                                    onChange={this.updateFormField}
+                                                    custom
+                                                    required
+                                                >
+                                                    <option>--Choose Category--</option>
+                                                    {this.renderCategories()}
+                                                </select>
 
-                    <hr className='hr-light' />
+                                            </MDBCol>
+                                        </MDBRow>
+                                        <hr className='hr-light' />
+                                        <MDBRow>
+                                            <MDBCol md="5" className="mb-3 mt-3">
+                                                <input
+                                                    value={this.state.fname}
+                                                    name="fname"
+                                                    onChange={this.updateFormField}
+                                                    type="text"
+                                                    className="form-control"
+                                                    placeholder="Name or Username"
+                                                    required
+                                                />
+                                                <div className="invalid-feedback">Who do we owe it to this picture?</div>
+                                                <div className="valid-feedback">Looks good!</div>
+                                            </MDBCol>
+                                            <MDBCol md="5" className="mb-3 mt-3">
+                                                <input
+                                                    value={this.state.location}
+                                                    name="location"
+                                                    onChange={this.updateFormField}
+                                                    type="text"
+                                                    className="form-control"
+                                                    placeholder="Location"
+                                                />
+                                                <small id="emailHelp" className="form-text text-muted">You don't have to post your location if you don't want to!</small>
+                                            </MDBCol>
+                                            <MDBCol md="2" className="mb-3 mt-3">
+                                                <input
+                                                    value={this.state.pIndex}
+                                                    onChange={this.updateFormField}
+                                                    type="text"
+                                                    className="form-control"
+                                                    name="pIndex"
+                                                    placeholder="Personal Index"
+                                                    required
+                                                />
+                                                <small id="emailHelp" className="form-text text-muted">Never share your Personal Index Numbers</small>
+                                            </MDBCol>
+                                        </MDBRow>
+                                        <MDBRow>
+                                            <MDBCol className="mb-3 mt-3">
+                                                <textarea
+                                                    value={this.state.equipment}
+                                                    name="equipment"
+                                                    onChange={this.updateFormField}
+                                                    type="textarea"
+                                                    className="form-control"
+                                                    placeholder="Equipment Used"
+                                                    rows="4"
+                                                    required
+                                                />
 
-                    <div className="persDetails">
-                        <Form>
-                            <Form.Row>
-                                <Form.Group as={Col} >
-                                    <Form.Label>Name / Username</Form.Label>
-                                    <Form.Control className="imgURL" type="text" placeholder="Name" name="fname" value={this.state.fname} onChange={this.updateFormField} />
-                                </Form.Group>
-                                <Form.Group as={Col} >
-                                    <Form.Label>Location</Form.Label>
-                                    <Form.Control className="imgURL" type="text" placeholder="Location" name="location" value={this.state.location} onChange={this.updateFormField} />
-                                </Form.Group>
-                                <Form.Group as={Col} sm="2" >
-                                    <Form.Label>Personal Index</Form.Label>
-                                    <Form.Control className="imgURL" type="text" placeholder="4 digits" name="pIndex" value={this.state.pIndex} onChange={this.updateFormField} />
-                                </Form.Group>
-                            </Form.Row>
+                                                <div className="invalid-feedback">What telescope and camera did you use?</div>
+                                                <div className="valid-feedback">Looks good!</div>
+                                            </MDBCol>
+                                        </MDBRow>
+                                        <MDBRow>
+                                            <MDBCol className="mb-3 mt-3">
+                                                <textarea
+                                                    value={this.state.processing}
+                                                    name="processing"
+                                                    onChange={this.updateFormField}
+                                                    type="textarea"
+                                                    className="form-control"
+                                                    placeholder="Acquisition/ Post-processes Used"
+                                                    rows="4"
+                                                    required
+                                                />
 
-                            <Col className="persDetailsCol">
-                                <Form.Label>Equipment Used</Form.Label>
-                                <Form.Control as="textarea" rows={3} placeholder="What Equipments did you use?" name="equipment" value={this.state.equipment} onChange={this.updateFormField} />
-                            </Col>
-                            <Col className="persDetailsCol">
-                                <Form.Label>Acquisitions / Processing</Form.Label>
-                                <Form.Control as="textarea" rows={3} placeholder="Any post-processing needed for the image?" name="processing" value={this.state.processing} onChange={this.updateFormField} />
-                            </Col>
-
-                        </Form>
-                    </div>
-                    <div className="uploadBtn">
-                        <Button type="submit" variant="primary" size="lg" onClick={this.uploadPosts} active>
-                            Upload
-                    </Button>
+                                                <div className="invalid-feedback">Any post processing you did </div>
+                                                <div className="valid-feedback">Looks good!</div>
+                                            </MDBCol>
+                                        </MDBRow>
+                                        <MDBBtn color="primary" type="submit">Upload</MDBBtn>
+                                    </form>
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBContainer>
                     </div>
                 </div>
             </React.Fragment>

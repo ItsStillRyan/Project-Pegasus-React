@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 //Bootstraps
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -57,6 +56,7 @@ export default class indiviPost extends React.Component {
                         <Col className="postImg">
                             <img
                                 src={this.state.img}
+                                alt={this.state.title}
                             />
                         </Col>
                     </Row>
