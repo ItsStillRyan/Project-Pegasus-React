@@ -4,14 +4,14 @@ import axios from "axios";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import { MDBContainer, MDBRow, MDBCol, MDBBtn,} from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, } from 'mdbreact';
 //CSS
 import '../main.css'
 //API
 const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
 
 
-export default class Uploads extends React.Component {
+export default class Update extends React.Component {
     state = {
         user_details: [],
         fname: "",
@@ -27,12 +27,12 @@ export default class Uploads extends React.Component {
     }
 
     //loading categories
-   async componentDidMount() {
+    async componentDidMount() {
         let response = await axios.get(baseURL + "/show/" + this.props.match.params._id)
         let response2 = await axios.get(baseURL + "/showCate")
         this.setState({
             user_details: response.data,
-            name: response.data.user_uploads.details.name,
+            fname: response.data.user_uploads.details.name,
             location: response.data.user_uploads.details.location,
             pIndex: response.data.user_uploads.details.pIndex,
             img: response.data.user_uploads.content.img,
@@ -42,6 +42,7 @@ export default class Uploads extends React.Component {
             web_cats: response2.data
 
         })
+    }
 
     renderCategories = () => {
         let accum = []
@@ -55,44 +56,15 @@ export default class Uploads extends React.Component {
         }
         return accum
     }
+
     //Form Field updates
     updateFormField = event => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
-    //add entry
-    // uploadPosts = async event => {
-    //     let newPost = {
-    //         user_uploads: {
-    //             details: {
-    //                 name: this.state.fname,
-    //                 location: this.state.location,
-    //                 pIndex: this.state.pIndex,
-    //                 category: this.state.category
-    //             },
-    //             content: {
-    //                 img: this.state.img,
-    //                 title: this.state.title,
-    //                 equipment: this.state.equipment,
-    //                 processing: this.state.processing,
-    //             }
-    //         }
-    //     }
-    //     let response = await axios.post(baseURL + "/upload", newPost)
-
-    //     newPost._id = response.data._id;
-
-    //     let clone = [...this.state.user_details]
-
-    //     clone.push(newPost)
-
-    //     this.setState({
-    //         user_details: clone
-    //     })
-
     //update post
-    updatePost = event =>{
+    updatePost = () => {
         let newPost = {
             user_uploads: {
                 details: {
@@ -109,20 +81,35 @@ export default class Uploads extends React.Component {
                 }
             }
         }
+
+        let clone = this.state.user_details.slice()
+
+        let index = -1
+        for(let i=0; i< this.state.user_details.length; i++){
+            let currentPost = this.state.user_details[i]
+            if(currentPost._id == newPost._id){
+                index = i
+                break
+            }
         }
+
+        clone[index] = newPost
+
+        this.setState({
+            user_details: clone
+        })
     }
 
-        window.location.reload(false);
-    }
+
     submitHandler = event => {
         event.preventDefault();
         event.target.className += " was-validated";
-        if (event.target.reportValidity()){
-            this.uploadPosts()
+        if (event.target.reportValidity()) {
+            this.updatePost()
         }
-        
+
         console.log(event.target.reportValidity())
-        
+
     };
 
 
@@ -135,7 +122,7 @@ export default class Uploads extends React.Component {
                     {/* title row */}
                     <Row>
                         <Col className="uploadsTitle">
-                            <p>Uploads</p>
+                            <p>Update</p>
                         </Col>
                     </Row>
                     {/* image preview box row */}
