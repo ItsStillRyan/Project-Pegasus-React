@@ -118,13 +118,13 @@ export default class Update extends React.Component {
 
     updateAlertBox = () => {
         alert("Post updated!")
-
     }
 
     deleteAlertBox = () => {
         alert("Post Deleted")
         this.deletePost()
-        this.props.history.push('/' + this.state.category + '/' + this.props.match.params._id)
+        this.props.history.push('/' + this.state.category + '/' + this.props.match.params._id)     
+        window.location.reload(false);
     }
 
 
@@ -135,6 +135,7 @@ export default class Update extends React.Component {
             this.updatePost()
             this.updateAlertBox()
             this.props.history.push('/' + this.state.category)
+            window.location.reload(false);
         }
 
         console.log(event.target.reportValidity())

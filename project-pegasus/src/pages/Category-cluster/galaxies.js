@@ -14,6 +14,8 @@ export default class Galaxies extends React.Component {
 
     state = {
         user_details: [],
+        filterCondi:""
+
     }
     
     async componentDidMount() {
@@ -37,7 +39,8 @@ export default class Galaxies extends React.Component {
 
 
         for (let s of this.state.user_details) {
-            accum.push(
+            if (this.state.filterCondi == s.user_uploads.content.title || this.state.filterCondi == ""){
+                accum.push(
                 <div key={s._id} className="cateIndiviRow show-col">
                     <MDBCol size="3">
                         <MDBCard className="cateCardStyle" >
@@ -56,10 +59,11 @@ export default class Galaxies extends React.Component {
                     </MDBCol>
                 </div>
             )
+            }
+            
         }
         return accum
     }
-
 
 
 
@@ -91,21 +95,8 @@ export default class Galaxies extends React.Component {
                                     <Form.Row>
                                         <Form.Group as={Col}>
                                             <div>
-                                                <MDBInput label="Filter" name="filterCondi" value={this.state.filterCondi} onChange={this.updateFormField} />
+                                                <MDBInput label="Filter by title" name="filterCondi" value={this.state.filterCondi} onChange={this.updateFormField} />
                                             </div>
-                                        </Form.Group>
-                                        <Form.Group>
-                                            <Form.Label className="filterText">Filter By:</Form.Label>
-                                            <Form.Control
-                                                as="select"
-                                                size="sm"
-                                                name="filterOp"
-                                                value={this.state.filterOp}
-                                                onChange={this.updateFormField}
-                                                custom>
-                                                <option value="title">Title</option>
-                                                <option value="name">Name</option>
-                                            </Form.Control>
                                         </Form.Group>
                                     </Form.Row>
                                 </Form>
