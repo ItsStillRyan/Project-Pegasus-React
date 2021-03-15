@@ -87,15 +87,15 @@ export default class Update extends React.Component {
             ...newPost
         })
 
-        let cloned = this.state.user_details.map(function(eachpost){
-            if(eachpost._id != newPost._id){
+        let cloned = this.state.user_details.map(function (eachpost) {
+            if (eachpost._id != newPost._id) {
                 return eachpost
-            }else{
+            } else {
                 return newPost
             }
         })
         this.setState({
-            user_details:cloned
+            user_details: cloned
         })
     }
 
@@ -104,7 +104,7 @@ export default class Update extends React.Component {
     deletePost = async post => {
         let index = this.state.user_details.findIndex(i => i._id === this.props.match.params._id)
 
-        await axios.delete(baseURL + "/delete/"+ this.props.match.params._id)
+        await axios.delete(baseURL + "/delete/" + this.props.match.params._id)
 
         let clone = [
             ...this.state.user_details.slice(0, index),
@@ -116,12 +116,25 @@ export default class Update extends React.Component {
         })
     }
 
+    updateAlertBox = () => {
+        alert("Post updated!")
+
+    }
+
+    deleteAlertBox = () => {
+        alert("Post Deleted")
+        this.deletePost()
+        this.props.history.push('/' + this.state.category + '/' + this.props.match.params._id)
+    }
+
 
     submitHandler = event => {
         event.preventDefault();
         event.target.className += " was-validated";
         if (event.target.reportValidity()) {
             this.updatePost()
+            this.updateAlertBox()
+            this.props.history.push('/' + this.state.category)
         }
 
         console.log(event.target.reportValidity())
@@ -285,9 +298,9 @@ export default class Update extends React.Component {
                                 </MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                
+
                                 <MDBCol className="mt-5">
-                                    <MDBBtn color="danger" type="submit" onClick={this.deletePost}>Delete</MDBBtn>
+                                    <MDBBtn color="danger" type="submit" onClick={this.deleteAlertBox}>Delete</MDBBtn>
                                     <small className="form-text text-muted">This is irreversable! Are you sure you want to delete this post?</small>
                                 </MDBCol>
                             </MDBRow>
