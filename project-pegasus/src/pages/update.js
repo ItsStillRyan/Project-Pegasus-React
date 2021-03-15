@@ -31,10 +31,10 @@ export default class Update extends React.Component {
         let response = await axios.get(baseURL + "/show/" + this.props.match.params._id)
         let response2 = await axios.get(baseURL + "/showCate")
         this.setState({
-            user_details: response.data,
             fname: response.data.user_uploads.details.name,
             location: response.data.user_uploads.details.location,
             pIndex: response.data.user_uploads.details.pIndex,
+            category: response.data.user_uploads.details.category,
             img: response.data.user_uploads.content.img,
             title: response.data.user_uploads.content.title,
             equipment: response.data.user_uploads.content.equipment,
@@ -83,33 +83,34 @@ export default class Update extends React.Component {
             }
         }
 
-        // let clone = this.state.user_details.slice()
+        axios.put(baseURL + '/update/' + this.props.match.params._id, {
+            ...newPost
+        })
 
-        // let index = -1
-        // for(let i=0; i< this.state.user_details.length; i++){
-        //     let currentPost = this.state.user_details[i]
-        //     if(currentPost._id == newPost._id){
-        //         index = i
-        //         break
-        //     }
-        // }
-
-        // clone[index] = newPost
-
-        // this.setState({
-        //     user_details: clone
-        // })
+        let cloned = this.state.user_details.map(function(eachpost){
+            if(eachpost._id != newPost._id){
+                return eachpost
+            }else{
+                return newPost
+            }
+        })
+        this.setState({
+            user_details:cloned
+        })
     }
 
 
     //delete
-    deletePost = post => {
-        let index = this.state.user_details.findIndex(t => t._id === post._id)
+    deletePost = async post => {
+        let index = this.state.user_details.findIndex(i => i._id === this.props.match.params._id)
+
+        await axios.delete(baseURL + "/delete/"+ this.props.match.params._id)
 
         let clone = [
             ...this.state.user_details.slice(0, index),
             ...this.state.user_details.slice(index + 1)
         ]
+
         this.setState({
             user_details: clone
         })
@@ -230,7 +231,7 @@ export default class Update extends React.Component {
                                                     className="form-control"
                                                     placeholder="Location"
                                                 />
-                                                <small id="emailHelp" className="form-text text-muted">You don't have to post your location if you don't want to!</small>
+                                                <small className="form-text text-muted">You don't have to post your location if you don't want to!</small>
                                             </MDBCol>
                                             <MDBCol md="2" className="mb-3 mt-3">
                                                 <input
@@ -242,7 +243,7 @@ export default class Update extends React.Component {
                                                     placeholder="Personal Index"
                                                     required
                                                 />
-                                                <small id="emailHelp" className="form-text text-muted">Never share your Personal Index Numbers</small>
+                                                <small className="form-text text-muted">Never share your Personal Index Numbers</small>
                                             </MDBCol>
                                         </MDBRow>
                                         <MDBRow>
@@ -284,8 +285,10 @@ export default class Update extends React.Component {
                                 </MDBCol>
                             </MDBRow>
                             <MDBRow>
+                                
                                 <MDBCol className="mt-5">
                                     <MDBBtn color="danger" type="submit" onClick={this.deletePost}>Delete</MDBBtn>
+                                    <small className="form-text text-muted">This is irreversable! Are you sure you want to delete this post?</small>
                                 </MDBCol>
                             </MDBRow>
                         </MDBContainer>
