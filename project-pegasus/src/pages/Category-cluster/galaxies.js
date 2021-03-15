@@ -14,10 +14,10 @@ export default class Galaxies extends React.Component {
 
     state = {
         user_details: [],
-        filterCondi:""
+        filterCondi: ""
 
     }
-    
+
     async componentDidMount() {
         let response = await axios.get(baseURL + "/galaxies")
         this.setState({
@@ -39,28 +39,28 @@ export default class Galaxies extends React.Component {
 
 
         for (let s of this.state.user_details) {
-            if (this.state.filterCondi == s.user_uploads.content.title || this.state.filterCondi == ""){
+            if (this.state.filterCondi == s.user_uploads.content.title || this.state.filterCondi == "") {
                 accum.push(
-                <div key={s._id} className="cateIndiviRow show-col">
-                    <MDBCol size="3">
-                        <MDBCard className="cateCardStyle" >
-                            <Link to={"/galaxies/" + s._id}>
-                                <MDBCardImage className="img-fluid cateImgSize" src={s.user_uploads.content.img} waves /></Link>
-                            <MDBCardBody className='elegant-color white-text rounded-bottom'>
-                                <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
-                                <hr className='hr-light' />
-                                <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
+                    <div key={s._id} className="cateIndiviRow show-col">
+                        <MDBCol size="3">
+                            <MDBCard className="cateCardStyle" >
                                 <Link to={"/galaxies/" + s._id}>
-                                    <a className='black-text d-flex justify-content-end'><h5 className='white-text'>Engage<MDBIcon icon='angle-double-right' className='ml-2' /></h5>
-                                    </a>
-                                </Link>
-                            </MDBCardBody>
-                        </MDBCard>
-                    </MDBCol>
-                </div>
-            )
+                                    <MDBCardImage className="img-fluid cateImgSize" src={s.user_uploads.content.img} waves /></Link>
+                                <MDBCardBody className='elegant-color white-text rounded-bottom'>
+                                    <MDBCardTitle>{s.user_uploads.content.title}</MDBCardTitle>
+                                    <hr className='hr-light' />
+                                    <MDBCardText>{s.user_uploads.details.name}</MDBCardText>
+                                    <Link to={"/galaxies/" + s._id}>
+                                        <a className='black-text d-flex justify-content-end'><h5 className='white-text'>Engage<MDBIcon icon='angle-double-right' className='ml-2' /></h5>
+                                        </a>
+                                    </Link>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </div>
+                )
             }
-            
+
         }
         return accum
     }
@@ -95,7 +95,7 @@ export default class Galaxies extends React.Component {
                                     <Form.Row>
                                         <Form.Group as={Col}>
                                             <div>
-                                                <MDBInput label="Filter by title" name="filterCondi" value={this.state.filterCondi} onChange={this.updateFormField} />
+                                                <MDBInput label="Filter by Title" name="filterCondi" value={this.state.filterCondi} onChange={this.updateFormField} />
                                             </div>
                                         </Form.Group>
                                     </Form.Row>
