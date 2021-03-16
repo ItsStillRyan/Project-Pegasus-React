@@ -4,7 +4,7 @@ import axios from "axios";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import { MDBContainer, MDBRow, MDBCol, MDBBtn,} from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, } from 'mdbreact';
 //CSS
 import '../main.css'
 //API
@@ -51,6 +51,10 @@ export default class Uploads extends React.Component {
             [event.target.name]: event.target.value
         })
     }
+    uploadAlertBox = () => {
+        alert("Post uploaded into the Index!")
+
+    }
     //add entry
     uploadPosts = async event => {
         let newPost = {
@@ -81,19 +85,22 @@ export default class Uploads extends React.Component {
             user_details: clone
         })
 
+        this.props.history.push('/' + this.state.category)
         window.location.reload(false);
     }
     submitHandler = event => {
         event.preventDefault();
         event.target.className += " was-validated";
-        if (event.target.reportValidity()){
+        if (event.target.reportValidity()) {
+            this.uploadAlertBox()
             this.uploadPosts()
-        }
-        
-        console.log(event.target.reportValidity())
-        
-    };
 
+
+        }
+
+        console.log(event.target.reportValidity())
+
+    };
 
 
 

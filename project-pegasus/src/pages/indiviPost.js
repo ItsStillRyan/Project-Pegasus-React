@@ -24,16 +24,19 @@ export default class indiviPost extends React.Component {
         title: "",
         equipment: "",
         processing: "",
-        pIndexCheck: ""
+        pIndexCheck: "",
+        comments: []
 
     }
 
     async componentDidMount() {
         let response = await axios.get(baseURL + "/show/" + this.props.match.params._id)
+        let response2 = await axios.get(baseURL + '/commentsList')
 
-        console.log(response.data.user_uploads.details.name)
+        console.log(response2.data)
         this.setState({
             user_details: response.data,
+            comments: response2.data,
             name: response.data.user_uploads.details.name,
             location: response.data.user_uploads.details.location,
             pIndex: response.data.user_uploads.details.pIndex,
@@ -52,13 +55,51 @@ export default class indiviPost extends React.Component {
         })
     }
 
+    //pIndex submit
     submitHandler = event => {
         event.preventDefault();
         event.target.className += " was-validated";
         if (event.target.reportValidity() && this.state.pIndexCheck == this.state.pIndex) {
             this.props.history.push('/update/' + this.props.match.params._id)
         }
-    };
+    }
+
+    //comments upload
+    uploadComments = async event => {
+        let newComment = {
+            userComs: {
+                comment: this.state.comments,
+                pIndex: this.state.pIndex
+            }
+        }
+
+        let response = await axios.post(baseURL + "/uploadCom", newComment)
+
+        newComment._id = response.data._id
+
+        let clone = [this.state.comments]
+
+        clone.push(newComment)
+
+        this.setState({
+            comments: clone
+        })
+    }
+
+    renderComments = () => {
+        let accum = [];
+        for (let s of this.state.comments) {
+            if (this.state.pIndex == s.userComs.pIndex) {
+                accum.push(
+                    <div key={s._id}>
+
+                    </div>
+                )
+            }
+        }
+    }
+
+
 
     render() {
         return (
@@ -154,17 +195,48 @@ export default class indiviPost extends React.Component {
                     <hr className='hr-light' />
                 </Container>
 
+
+                <Col className="commentTitle">
+                    <p>Comments</p>
+                </Col>
+
                 <Container>
                     <Row>
-                        <Col className="commentTitle">
-                            <p>Comments</p>
+                        <Col sm={10} className="commentNamebox">
+                            <Form.Group>
+                                <Form.Control type="text" placeholder="Name / Username" />
+                            </Form.Group>
+
+                        </Col>
+                        <Col sm={2} className="commentBtn">
+                            <Button variant="light" >Comment</Button>
                         </Col>
                     </Row>
-                    <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Control as="textarea" rows={3} placeholder="Add your Comments" />
-                    </Form.Group>
+                    <Row>
+                        <Col>
+                            <Form.Group>
+                                <Form.Control as="textarea" rows={3} placeholder="Add your Comments" />
+                            </Form.Group>
+
+                        </Col>
+                    </Row>
                     <hr className='hr-light' />
                 </Container>
+                <div className="commentSectionWhole">
+                    <Container>
+                        <Row>
+                            <Col>
+                                This name:
+                        </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                this is my commentasdasd
+                        </Col>
+                        </Row>
+                    </Container>
+                </div>
+
             </React.Fragment>
         )
     }

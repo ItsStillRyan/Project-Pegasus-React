@@ -36,8 +36,6 @@ export default class Galaxies extends React.Component {
 
     renderDetails = () => {
         let accum = [];
-
-
         for (let s of this.state.user_details) {
             if (this.state.filterCondi == s.user_uploads.content.title || this.state.filterCondi == "") {
                 accum.push(

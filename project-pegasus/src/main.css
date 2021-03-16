@@ -268,5 +268,10 @@
     font-size:1.6em;
     font-family:Conthrax;
     text-align: center;
-
+}
+.commentNamebox{
+    margin-top: 1%;
+}
+.commentSectionWhole{
+    color:white;
 }
