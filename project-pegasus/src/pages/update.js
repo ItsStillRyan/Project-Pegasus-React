@@ -3,6 +3,7 @@ import axios from "axios";
 //Bootstraps
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, } from 'mdbreact';
 //CSS
@@ -23,13 +24,17 @@ export default class Update extends React.Component {
         equipment: [],
         processing: [],
         cateList: [],
-        web_cats: []
+        web_cats: [],
+        comments: [],
+
     }
 
     //loading categories
     async componentDidMount() {
         let response = await axios.get(baseURL + "/show/" + this.props.match.params._id)
         let response2 = await axios.get(baseURL + "/showCate")
+        let response3 = await axios.get(baseURL + "/commentsList")
+
         this.setState({
             fname: response.data.user_uploads.details.name,
             location: response.data.user_uploads.details.location,
@@ -39,7 +44,8 @@ export default class Update extends React.Component {
             title: response.data.user_uploads.content.title,
             equipment: response.data.user_uploads.content.equipment,
             processing: response.data.user_uploads.content.processing,
-            web_cats: response2.data
+            web_cats: response2.data,
+            comments: response3.data
 
         })
     }
@@ -99,8 +105,39 @@ export default class Update extends React.Component {
         })
     }
 
+    renderComments = () => {
+        let accum = [];
+        for (let s of this.state.comments) {
+            if (this.state.pIndex === s.userComs.pIndex) {
+                accum.push(
+                    <div key={s._id}>
+                        <Container>
+                            <Row>
+                                <Col className="commentName">
+                                    <p>{s.userComs.name}:</p>
+                                </Col>
+                                {/* <Col className="commentDelete">
+                                    <Button variant="danger"}>
+                                        <i class="far fa-trash-alt"></i>
+                                    </Button>
+                                </Col> */}
+                            </Row>
+                            <Row>
+                                <Col className="commentDesc">
+                                    <p>{s.userComs.comment}</p>
+                                </Col>
+                            </Row>
+                        </Container>
+                        <hr className='hr-light' />
+                    </div>
+                )
+            }
+        }
+        return accum
+    }
 
-    //delete
+
+    //delete post
     deletePost = async post => {
         let index = this.state.user_details.findIndex(i => i._id === this.props.match.params._id)
 
@@ -113,6 +150,21 @@ export default class Update extends React.Component {
 
         this.setState({
             user_details: clone
+        })
+    }
+
+    //delete comment
+    deleteComment = async post => {
+        let index = this.state.comments.findIndex(i => i._id === post._id)
+
+        await axios.delete(baseURL + '/comDelete/' + post._id)
+
+        let clone = [
+            ...this.state.comments.slice(0, index),
+            ...this.state.comments.slice(index + 1)
+        ]
+        this.setState({
+            comments: clone
         })
     }
 
@@ -290,14 +342,17 @@ export default class Update extends React.Component {
                                     </form>
                                 </MDBCol>
                             </MDBRow>
-                            <MDBRow>
-
-                                <MDBCol className="mt-5">
-                                    <MDBBtn color="danger" type="submit" onClick={this.deleteAlertBox}>Delete</MDBBtn>
-                                    <small className="form-text text-muted">This is irreversable! Are you sure you want to delete this post?</small>
-                                </MDBCol>
-                            </MDBRow>
+                                <MDBRow>
+                                    <MDBCol className="mt-5">
+                                        <MDBBtn color="danger" type="submit" onClick={this.deleteAlertBox}>Delete Post</MDBBtn>
+                                        <small className="form-text text-muted">This is irreversable! Are you sure you want to delete this post?</small>
+                                    </MDBCol>
+                                </MDBRow>
+                            <hr className='hr-light' />
                         </MDBContainer>
+                    </div>
+                    <div className="commentSectionWhole">
+                        {this.renderComments()}
                     </div>
                 </div>
             </React.Fragment>

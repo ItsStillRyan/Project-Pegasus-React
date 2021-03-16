@@ -63,6 +63,18 @@ export default class indiviPost extends React.Component {
         }
     }
 
+    //comment submit
+    submitHandler2 = event => {
+        event.preventDefault();
+        event.target.className += " was-validated";
+        if (event.target.reportValidity()){
+            this.uploadComments()
+            window.location.reload(false);
+
+        }
+
+    }
+
     //comments upload
     uploadComments = async event => {
         let newComment = {
@@ -217,29 +229,43 @@ export default class indiviPost extends React.Component {
                 <Col className="commentTitle">
                     <p>Comments</p>
                 </Col>
-
-                <Container>
-                    <Row>
-                        <Col sm={10} className="commentNamebox">
-                            <Form.Group>
-                                <Form.Control type="text" placeholder="Name / Username" name="commentName" onChange={this.updateFormField} />
-                            </Form.Group>
-
-                        </Col>
-                        <Col sm={2} className="commentBtn">
-                            <Button variant="light" onClick={this.commentAlertBox}>Comment</Button>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Form.Group>
-                                <Form.Control as="textarea" rows={3} placeholder="Add your Comments" name="commentContent" onChange={this.updateFormField} />
-                            </Form.Group>
-
-                        </Col>
-                    </Row>
-                    <hr className='hr-light' />
-                </Container>
+                <form
+                    className="needs-validation"
+                    onSubmit={this.submitHandler2}
+                    noValidate>
+                    <MDBContainer>
+                        <MDBRow>
+                            <MDBCol sm={10} className="commentNamebox">
+                                <input
+                                    value={this.state.commentName}
+                                    name="commentName"
+                                    onChange={this.updateFormField}
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Name / Username"
+                                    required
+                                />
+                            </MDBCol>
+                            <MDBCol sm={2}>
+                                <MDBBtn color="primary" type="submit">Comment</MDBBtn>
+                            </MDBCol>
+                        </MDBRow>
+                        <MDBRow>
+                            <MDBCol>
+                                <textarea
+                                    value={this.state.commentContent}
+                                    name="commentContent"
+                                    onChange={this.updateFormField}
+                                    className="form-control"
+                                    placeholder="Add your Comments"
+                                    rows = "3"
+                                    required
+                                />
+                            </MDBCol>
+                        </MDBRow>
+                        <hr className='hr-light' />
+                    </MDBContainer>
+                </form>
                 <div className="commentSectionWhole">
                     {this.renderComments()}
                 </div>
