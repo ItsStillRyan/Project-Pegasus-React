@@ -25,15 +25,15 @@ export default class indiviPost extends React.Component {
         equipment: "",
         processing: "",
         pIndexCheck: "",
-        comments: []
+        comments: [],
+        commentName: "",
+        commentContent: ""
 
     }
 
     async componentDidMount() {
         let response = await axios.get(baseURL + "/show/" + this.props.match.params._id)
         let response2 = await axios.get(baseURL + '/commentsList')
-
-        console.log(response2.data)
         this.setState({
             user_details: response.data,
             comments: response2.data,
@@ -44,10 +44,9 @@ export default class indiviPost extends React.Component {
             title: response.data.user_uploads.content.title,
             equipment: response.data.user_uploads.content.equipment,
             processing: response.data.user_uploads.content.processing,
-
         })
-
     }
+
     //Form Field updates
     updateFormField = event => {
         this.setState({
@@ -68,7 +67,8 @@ export default class indiviPost extends React.Component {
     uploadComments = async event => {
         let newComment = {
             userComs: {
-                comment: this.state.comments,
+                name: this.state.commentName,
+                comment: this.state.commentContent,
                 pIndex: this.state.pIndex
             }
         }
@@ -89,14 +89,32 @@ export default class indiviPost extends React.Component {
     renderComments = () => {
         let accum = [];
         for (let s of this.state.comments) {
-            if (this.state.pIndex == s.userComs.pIndex) {
+            if (this.state.pIndex === s.userComs.pIndex) {
                 accum.push(
                     <div key={s._id}>
-
+                        <Container>
+                            <Row>
+                                <Col className="commentName">
+                                    <p>{s.userComs.name}:</p>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className="commentDesc">
+                                    <p>{s.userComs.comment}</p>
+                                </Col>
+                            </Row>
+                        </Container>
+                        <hr className='hr-light' />
                     </div>
                 )
             }
         }
+        return accum
+    }
+    commentAlertBox = () => {
+        alert("Comment Added")
+        this.uploadComments()
+        window.location.reload(false);
     }
 
 
@@ -204,18 +222,18 @@ export default class indiviPost extends React.Component {
                     <Row>
                         <Col sm={10} className="commentNamebox">
                             <Form.Group>
-                                <Form.Control type="text" placeholder="Name / Username" />
+                                <Form.Control type="text" placeholder="Name / Username" name="commentName" onChange={this.updateFormField} />
                             </Form.Group>
 
                         </Col>
                         <Col sm={2} className="commentBtn">
-                            <Button variant="light" >Comment</Button>
+                            <Button variant="light" onClick={this.commentAlertBox}>Comment</Button>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
                             <Form.Group>
-                                <Form.Control as="textarea" rows={3} placeholder="Add your Comments" />
+                                <Form.Control as="textarea" rows={3} placeholder="Add your Comments" name="commentContent" onChange={this.updateFormField} />
                             </Form.Group>
 
                         </Col>
@@ -223,18 +241,7 @@ export default class indiviPost extends React.Component {
                     <hr className='hr-light' />
                 </Container>
                 <div className="commentSectionWhole">
-                    <Container>
-                        <Row>
-                            <Col>
-                                This name:
-                        </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                this is my commentasdasd
-                        </Col>
-                        </Row>
-                    </Container>
+                    {this.renderComments()}
                 </div>
 
             </React.Fragment>
