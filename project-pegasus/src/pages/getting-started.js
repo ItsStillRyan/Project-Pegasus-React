@@ -7,6 +7,9 @@ import Card from 'react-bootstrap/Card'
 import Tab from 'react-bootstrap/Tab'
 import Nav from 'react-bootstrap/Nav'
 import Accordion from 'react-bootstrap/Accordion'
+//image import
+import postpic1 from '../images/getting-started/pic1.jpg'
+import postpic2 from '../images/getting-started/pic2.jpg'
 //CSS
 import '../main.css'
 
@@ -43,8 +46,84 @@ export default class GettingStarted extends React.Component {
                             <Col sm={9} className="gsContent">
                                 <Tab.Content>
                                     <Tab.Pane eventKey="first">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum, dolor quis sollicitudin elementum, est neque volutpat magna, ac sagittis eros nisi et libero. Vivamus urna turpis, dapibus ac dignissim vel, imperdiet at metus. Suspendisse eget placerat elit. Phasellus eget luctus leo, at consequat eros. Phasellus placerat justo eget leo tempus, non tincidunt nulla ullamcorper. Donec facilisis dui ut neque suscipit, nec rhoncus enim condimentum. Proin massa lacus, ultricies sed massa vitae, dignissim tincidunt dolor. Phasellus tempus cursus erat. Proin tincidunt ex est, non finibus dui imperdiet id. Sed massa justo, viverra eget facilisis eu, convallis accumsan dui. Sed volutpat, eros ut placerat congue, turpis tellus lobortis erat, et pellentesque nisl massa vitae diam. Nullam ut pharetra erat. Suspendisse venenatis egestas enim et tristique. Nulla rutrum, risus vitae molestie egestas, purus est congue sem, sit amet aliquam nunc dolor sit amet lorem.
-                                </Tab.Pane>
+                                        <div>
+                                            <Row>
+                                                <Col>
+                                                    <img
+                                                        src={postpic1}
+                                                        width="80%"
+                                                        alt="help1"
+                                                    />
+                                                </Col>
+                                            </Row>
+                                            <Row>
+                                                <Col className="helpText">
+                                                    <p>First of all, navigate to the upload page from the navigation bar. <br /> Click on "Upload into the Index".</p>
+                                                </Col>
+                                            </Row>
+                                            <Row>
+                                                <Col>
+                                                    <img
+                                                        src={postpic2}
+                                                        width="80%"
+                                                        alt="help2"
+                                                    />
+                                                </Col>
+                                            </Row>
+                                            <Row>
+                                                <Col className="helpText">
+                                                    <p>
+                                                        Upon clicking and entering, you'll see this page.
+                                                        <br />
+                                                        <sub>psst, scroll down if you only see the word "Upload"
+
+                                                        </sub>
+                                                    </p>
+                                                    <br />
+                                                    <p>
+                                                        1. Here you will enter the Title of your post. Name it well and short! This is the first thing everybody sees!
+                                                    </p>
+                                                    <br />
+                                                    <p>
+                                                        2. The image URL will go into this. A preview of the picture will be display in the box above!
+                                                        <br/>  
+                                                        <sub>We're sorry we couldn't accept direct upload of your image for now!</sub>
+                                                    </p>
+                                                    <br />
+                                                    <p>
+                                                        3. Choose your category in the drop-down selection here. Remember to choose the category correctly! This will determine where your picture ends up at!
+                                                    </p>
+                                                    <br />
+                                                    <p>
+                                                        4. Enter your name or username/alias here so people know who you are.
+                                                    </p>
+                                                    <br />
+                                                    <p>
+                                                        5. You can specifiy your location here, you don't have to be detailed, just your country or state will do! This isn't necessary.
+                                                    </p>
+                                                    <br />
+                                                    <p>
+                                                        6. This is Important! The Personal Index is a 4 digit passcode that allows you to update or delete your post as and when you want. <br/> Please remember your own Personal Index Code!
+                                                    </p>
+                                                    <br />
+                                                    <p>
+                                                        7. List the equipments you used.
+                                                    </p>
+                                                    <br />
+                                                    <p>
+                                                        8. Here is where you can list down what you have done to the picture as post-processings.
+                                                    </p>
+                                                    <br />
+                                                    <p>
+                                                        9. Finally, click this button to submit your post and there you go! Your post will be displayed in its respective category!
+                                                    </p>
+                                                    <br />
+
+                                                </Col>
+                                            </Row>
+                                        </div>
+
+                                    </Tab.Pane>
 
 
                                     <Tab.Pane eventKey="second">

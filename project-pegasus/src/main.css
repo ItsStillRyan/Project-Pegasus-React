@@ -234,10 +234,16 @@
 .gsAccord{
     color: black;
     font-family:Conthrax;
-    font-size: 1.1em
+    font-size: 1.1em;
 }
 .gsAccordBack{
     background-color:#1a1d20;
+}
+.helpText{
+    color: white;
+    font-size: 1.2em;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 
 /* individual post */

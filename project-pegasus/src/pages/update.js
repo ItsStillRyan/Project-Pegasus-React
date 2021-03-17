@@ -150,6 +150,7 @@ export default class Update extends React.Component {
 
         this.setState({
             user_details: clone
+
         })
     }
 
@@ -342,12 +343,12 @@ export default class Update extends React.Component {
                                     </form>
                                 </MDBCol>
                             </MDBRow>
-                                <MDBRow>
-                                    <MDBCol className="mt-5">
-                                        <MDBBtn color="danger" type="submit" onClick={this.deleteAlertBox}>Delete Post</MDBBtn>
-                                        <small className="form-text text-muted">This is irreversable! Are you sure you want to delete this post?</small>
-                                    </MDBCol>
-                                </MDBRow>
+                            <MDBRow>
+                                <MDBCol className="mt-5">
+                                    <MDBBtn color="danger" type="submit" onClick={this.deleteAlertBox}>Delete Post</MDBBtn>
+                                    <small className="form-text text-muted">This is irreversable! Are you sure you want to delete this post?</small>
+                                </MDBCol>
+                            </MDBRow>
                             <hr className='hr-light' />
                         </MDBContainer>
                     </div>
