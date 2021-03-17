@@ -1,10 +1,11 @@
 /* logo animations */
 .mainLogoSec{
     position: relative;
-    padding-top: 15%;
+    padding-top:5%;
     top: 50%;
-    right: 70%;
-    transform: translate(50%,-50%);
+    right: 50%;
+    transform: translate(30%);
+    
 }
 .ring1 img{
     position: absolute;

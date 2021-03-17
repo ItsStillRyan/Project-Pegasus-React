@@ -30,8 +30,6 @@
     font-size:1.2em;
     line-height: 40px;
 }
-
-
 /* footer css in footer.js */
 .footerWholeSize{
     margin-top: 3%;
@@ -62,14 +60,14 @@
     color: white;
     font-size: 5em;
     font-family: Conthrax;
-    margin-top: 30%;
+    margin-top: 35%;
 }
 .mainTitleSub{
     font-size:0.8em;
     color:white;
     font-family: Conthrax;
     text-align: center;
-    margin-bottom: 15%;
+    margin-bottom: 12%;
 }
 .chevronDown{
     color:white;
@@ -91,7 +89,7 @@
     text-align: right;
 }
 .mainDescSec{
-    background-color: #2f2f2f;
+    background-color: #212121;
     padding-top: 4%;
 }
 .innerMainDescSec{

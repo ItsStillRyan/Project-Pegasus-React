@@ -122,6 +122,7 @@ const Main = () => {
                     <Row className="mainAbout2">
                         <Col className="mainTextDesc">
                             <p>
+                                New to Astrophotography <br/>
                                 Need help getting started?
                             </p>
                         </Col>
