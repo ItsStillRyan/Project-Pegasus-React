@@ -15,11 +15,13 @@ import planetary from '../images/categories-img/planetary.png'
 import starclusters from '../images/categories-img/starclusters.png'
 import spacecraft from '../images/categories-img/spacecraft.png'
 import others from '../images/categories-img/others.png'
+import mainpic1 from '../images/mainpic1.png'
+import mainpic2 from '../images/mainpic2.png'
 
 const Main = () => {
     return (
         <React.Fragment>
-            <div>
+            <div className="mainLogoSec">
                 <Container>
                     <Row>
                         <Col className="logo-col">
@@ -41,31 +43,49 @@ const Main = () => {
                     </Row>
                 </Container>
             </div>
+
             <Row>
                 <Col className="chevronDown">
                     <i className="fas fa-chevron-down"></i>
                 </Col>
             </Row>
-            <hr className='hr-light' />
-            <div >
-                <Container>
-                    <Row>
-                        <Col className="mainAbout1">
-                            <p>
-                                Share your pictures and collaberate with other astrophotographers.
+
+            <div className="mainDescSec">
+                <Row className="mainAbout1">
+                    <Col>
+                        <img
+                            src={mainpic1}
+                            height="300"
+                            alt="Pegasus Logo"
+                        />
+                    </Col>
+                    <Col className="mainTextDesc">
+                        <p>
+                            Share your pictures and collaberate with other astrophotographers.
                                 </p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="mainAbout2">
-                            <p>
-                                Need help getting started?
+                    </Col>
+                </Row>
+                <Row className="mainAbout2">
+                    <Col className="mainTextDesc">
+                        <p>
+                            Need help getting started?
                             </p>
-                        </Col>
-                    </Row>
-                </Container>
-                <hr className='hr-light' />
+                    </Col>
+                    <Col>
+                        <img
+                            src={mainpic2}
+                            height="300"
+                            alt="Pegasus Logo"
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="chevronDown">
+                        <i className="fas fa-chevron-down"></i>
+                    </Col>
+                </Row>
             </div>
+
             <div className="cateBtns">
                 <div className="mainCateTitle">
                     <Container>
