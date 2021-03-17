@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container'
 import { MDBMask, MDBView } from "mdbreact";
 // css imports
 import '../main.css'
+import '../animations.css'
 // image imports
 import logo from '../images/logo-big.png'
 import galaxies from '../images/categories-img/galaxies.png'
@@ -17,21 +18,73 @@ import spacecraft from '../images/categories-img/spacecraft.png'
 import others from '../images/categories-img/others.png'
 import mainpic1 from '../images/mainpic1.png'
 import mainpic2 from '../images/mainpic2.png'
+// animated image logo imports
+import ring1 from '../images/main-logo/ring1.png'
+import ring2 from '../images/main-logo/ring2.png'
+import ring3 from '../images/main-logo/ring3.png'
+import ring4 from '../images/main-logo/ring4.png'
+import backgroundCenter from '../images/main-logo/backgroundCenter.png'
+import pegaCenter from '../images/main-logo/pegaCenter.png'
 
 const Main = () => {
     return (
         <React.Fragment>
-            <div className="mainLogoSec">
+            <div>
                 <Container>
+                    <div className="mainLogoSec">
+                        <Row >
+                            <Col className="logo-col ring1">
+                                <img
+                                    src={ring1}
+                                    width="400"
+                                    height="400"
+                                    alt="Pegasus Logo"
+                                />
+                            </Col>
+                            <Col className="logo-col ring2">
+                                <img
+                                    src={ring2}
+                                    width="400"
+                                    height="400"
+                                    alt="Pegasus Logo"
+                                />
+                            </Col>
+                            <Col className="logo-col ring3">
+                                <img
+                                    src={ring3}
+                                    width="400"
+                                    height="400"
+                                    alt="Pegasus Logo"
+                                />
+                            </Col>
+                            <Col className="logo-col ring4">
+                                <img
+                                    src={ring4}
+                                    width="400"
+                                    height="400"
+                                    alt="Pegasus Logo"
+                                />
+                            </Col>
+                            <Col className="logo-col backgroundCenter">
+                                <img
+                                    src={backgroundCenter}
+                                    width="400"
+                                    height="400"
+                                    alt="Pegasus Logo"
+                                />
+                            </Col>
+                            <Col className="logo-col pegaCenter">
+                                <img
+                                    src={pegaCenter}
+                                    width="400"
+                                    height="400"
+                                    alt="Pegasus Logo"
+                                />
+                            </Col>
+
+                        </Row>
+                    </div>
                     <Row>
-                        <Col className="logo-col">
-                            <img
-                                src={logo}
-                                width="350"
-                                height="350"
-                                alt="Pegasus Logo"
-                            />
-                        </Col>
                         <Col className="title-col">
                             The Pegasus Index
                         </Col>
@@ -51,39 +104,41 @@ const Main = () => {
             </Row>
 
             <div className="mainDescSec">
-                <Row className="mainAbout1">
-                    <Col>
-                        <img
-                            src={mainpic1}
-                            height="300"
-                            alt="Pegasus Logo"
-                        />
-                    </Col>
-                    <Col className="mainTextDesc">
-                        <p>
-                            Share your pictures and collaberate with other astrophotographers.
+                <div className="innerMainDescSec">
+                    <Row className="mainAbout1">
+                        <Col>
+                            <img
+                                src={mainpic1}
+                                height="300"
+                                alt="Pegasus Logo"
+                            />
+                        </Col>
+                        <Col className="mainTextDesc">
+                            <p>
+                                Share your pictures and collaberate with other astrophotographers.
                                 </p>
-                    </Col>
-                </Row>
-                <Row className="mainAbout2">
-                    <Col className="mainTextDesc">
-                        <p>
-                            Need help getting started?
+                        </Col>
+                    </Row>
+                    <Row className="mainAbout2">
+                        <Col className="mainTextDesc">
+                            <p>
+                                Need help getting started?
                             </p>
-                    </Col>
-                    <Col>
-                        <img
-                            src={mainpic2}
-                            height="300"
-                            alt="Pegasus Logo"
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col className="chevronDown">
-                        <i className="fas fa-chevron-down"></i>
-                    </Col>
-                </Row>
+                        </Col>
+                        <Col>
+                            <img
+                                src={mainpic2}
+                                height="300"
+                                alt="Pegasus Logo"
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="chevronDown">
+                            <i className="fas fa-chevron-down"></i>
+                        </Col>
+                    </Row>
+                </div>
             </div>
 
             <div className="cateBtns">
