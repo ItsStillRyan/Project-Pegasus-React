@@ -34,24 +34,38 @@ const Main = () => {
                             The Pegasus Index
                         </Col>
                     </Row>
+                    <Row>
+                        <Col className="mainTitleSub">
+                            21<sup>h</sup> 12.6<sup>m</sup> - 00<sup>h</sup> 14.6<sup>m</sup> | +2.33° to +36.61°[1] | Quadrant NQ4 | 1121 sq. deg
+                        </Col>
+                    </Row>
                 </Container>
             </div>
-            <div className="mainTitleSub">
-                    <Container>
-                        <Row>
-                            <Col>
-                                <p>
-                                    Seventh largest constellation in the sky, occupying an area of 1121 square degrees. It is located in the fourth quadrant of the northern hemisphere (NQ4) and can be seen at latitudes between +90° and -60°
+            <Row>
+                <Col className="chevronDown">
+                    <i className="fas fa-chevron-down"></i>
+                </Col>
+            </Row>
+            <hr className='hr-light' />
+            <div >
+                <Container>
+                    <Row>
+                        <Col className="mainAbout1">
+                            <p>
+                                Share your pictures and collaberate with other astrophotographers.
                                 </p>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <i className="fas fa-chevron-down"></i>
-                            </Col>
-                        </Row>
-                    </Container>
-                </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="mainAbout2">
+                            <p>
+                                Need help getting started?
+                            </p>
+                        </Col>
+                    </Row>
+                </Container>
+                <hr className='hr-light' />
+            </div>
             <div className="cateBtns">
                 <div className="mainCateTitle">
                     <Container>

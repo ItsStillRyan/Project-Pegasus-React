@@ -70,9 +70,7 @@ export default class indiviPost extends React.Component {
         if (event.target.reportValidity()){
             this.uploadComments()
             window.location.reload(false);
-
         }
-
     }
 
     //comments upload
