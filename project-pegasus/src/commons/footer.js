@@ -20,22 +20,22 @@ export default function FooterMain(props) {
                             <h5 className="title">Categories</h5>
                             <ul>
                                 <li className="list-unstyled">
-                                    <a href="#!">Galaxies</a>
+                                    <a href="/galaxies">Galaxies</a>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="#!">Star Clusters</a>
+                                    <a href="/starclusters">Star Clusters</a>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="#!">Planetary</a>
+                                    <a href="/planetary">Planetary</a>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="#!">Nebulae</a>
+                                    <a href="/nebulae">Nebulae</a>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="#!">Space Craft</a>
+                                    <a href="/spacecraft">Space Craft</a>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="#!">Others</a>
+                                    <a href="/others">Others</a>
                                 </li>
                             </ul>
                         </MDBCol>
@@ -44,7 +44,7 @@ export default function FooterMain(props) {
                             <h5 className="title">Help</h5>
                             <ul>
                                 <li className="list-unstyled">
-                                    <a href="#!">Getting Started</a>
+                                    <a href="/gettingstarted">Getting Started</a>
                                 </li>
                             </ul>
                         </MDBCol>

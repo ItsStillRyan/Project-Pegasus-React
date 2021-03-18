@@ -11,15 +11,14 @@
 /* main body css in App.js */
 
 .bodyT{
+    background-image: url("images/background.jpg");
     background-color: #363f4a;
+    background-repeat: repeat;
+    background-size: auto;
 }
 
 .divContain{
     background-color: rgba(0, 0, 0, 0.4);
-    width: 90%;
-    margin-left: 50%;
-    margin-right:50%;
-    transform: translate(-50%);
     padding-bottom: 5%;
 }
 
@@ -91,6 +90,7 @@
 .mainDescSec{
     background-color: #212121;
     padding-top: 4%;
+    opacity: 0.8;
 }
 .innerMainDescSec{
     width:90%;
