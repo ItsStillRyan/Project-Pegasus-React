@@ -236,6 +236,9 @@
     font-family:Conthrax;
     font-size: 1.1em;
 }
+.gsCard{
+    opacity: 0.8;
+}
 .gsAccordBack{
     background-color:#1a1d20;
 }
