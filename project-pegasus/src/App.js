@@ -33,13 +33,14 @@ function App() {
                         <Route exact path="/" component={MainBody} />
 
                         {/* Categories*/}
+                        <div className="divContain2">
                         <Route exact path="/galaxies" component={Galaxies} />
                         <Route exact path="/starcluster" component={StarCluster} />
                         <Route exact path="/planetary" component={Planetary} />
                         <Route exact path="/nebulae" component={Nebulae} />
                         <Route exact path="/spacecraft" component={SpaceCraft} />
                         <Route exact path="/others" component={Others} />
-
+                        </div>
                         {/* Postings */}
                         <Route exact path="/uploads" component={Uploads}/>
 
@@ -61,7 +62,6 @@ function App() {
                         {/* page not found */}
                         <Route exact path="/lost" component={PageNotFound} />
                         <Redirect to="/lost" />
-
                     </Switch>
                 </Router>
             </div>

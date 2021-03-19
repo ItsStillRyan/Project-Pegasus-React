@@ -20,6 +20,11 @@
 .divContain{
     background-color: rgba(0, 0, 0, 0.4);
     padding-bottom: 5%;
+    overflow-x: hidden
+}
+.divContain2{
+    width: 95%;
+    margin: auto;
 }
 
 /* navbar css in navbar.js */
@@ -93,7 +98,7 @@
     opacity: 0.8;
 }
 .innerMainDescSec{
-    width:90%;
+    width:75%;
     margin:auto;
 }
 .mainTextDesc p{
