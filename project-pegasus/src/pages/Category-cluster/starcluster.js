@@ -23,6 +23,7 @@ export default class StarCluster extends React.Component {
         this.setState({
             user_details: response.data
         })
+        window.scrollTo(0, 0)
     }
 
     //Form Field updates

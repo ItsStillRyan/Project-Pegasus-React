@@ -314,7 +314,7 @@ export default class GettingStarted extends React.Component {
                                             </Card>
 
                                             <Card className="gsCard">
-                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="3">Glossary of Terms</Accordion.Toggle>
+                                                <Accordion.Toggle className="gsAccord" as={Card.Header} eventKey="2">Glossary of Terms</Accordion.Toggle>
                                                 <Accordion.Collapse eventKey="2" className="gsAccordBack">
                                                     <Card.Body>
                                                         <p>
