@@ -124,7 +124,9 @@ const Main = () => {
                             <p>
                                 New to Astrophotography? <br />
                                 Need help getting started?<br />
-                                <a href="/gettingstarted">Click here!</a>
+                                <Link to="/gettingstarted">
+                                <a>Click here!</a>
+                                </Link>
                             </p>
                         </Col>
                         <Col>

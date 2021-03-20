@@ -70,7 +70,7 @@ export default class indiviPost extends React.Component {
         event.target.className += " was-validated";
         if (event.target.reportValidity()){
             this.uploadComments()
-            window.location.reload(false);
+            window.location.reload();
         }
     }
 
