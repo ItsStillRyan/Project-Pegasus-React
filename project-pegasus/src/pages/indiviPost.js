@@ -13,6 +13,7 @@ import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBConta
 import '../main.css'
 //API
 const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
+
 export default class indiviPost extends React.Component {
 
     state = {

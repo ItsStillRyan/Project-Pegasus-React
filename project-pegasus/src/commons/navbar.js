@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 //bootstraps
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -15,7 +16,7 @@ export default class NavbarMain extends React.Component {
     state = {
         web_cats: []
     }
-    async componentDidMount(){
+    async componentDidMount() {
         let response = await axios.get(baseURL + "/showCate")
         this.setState({
             web_cats: response.data
@@ -27,8 +28,11 @@ export default class NavbarMain extends React.Component {
         for (let x of this.state.web_cats) {
             for (let i = 0; i < x.categories.length; i++) {
                 accum.push(
-                    <NavDropdown.Item href={"/" + x.categories[i].toLowerCase()}>{x.categories[i].toLowerCase()}</NavDropdown.Item>
-
+                    <NavDropdown.Item>
+                        <Link to={"/" + x.categories[i].toLowerCase()}>
+                            {x.categories[i]}
+                        </Link>
+                    </NavDropdown.Item>
                 )
             }
         }
@@ -38,14 +42,16 @@ export default class NavbarMain extends React.Component {
         return (
             <React.Fragment>
                 <Navbar expand="lg" bg="dark" varient="dark">
-                    <Navbar.Brand href="/">
-                        <img
-                            src={logo}
-                            width="60"
-                            height="60"
-                            className="d-inline-block align-top"
-                            alt="Pegasus Logo"
-                        />
+                    <Navbar.Brand>
+                        <Link to="/">
+                            <img
+                                src={logo}
+                                width="60"
+                                height="60"
+                                className="d-inline-block align-top"
+                                alt="Pegasus Logo"
+                            />
+                        </Link>
                     </Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className="navLink" />
@@ -57,8 +63,19 @@ export default class NavbarMain extends React.Component {
                                 {this.renderCategories()}
 
                             </NavDropdown>
-                            <Nav.Link href="/gettingstarted"><span className="navLink ml-5">Getting Started</span></Nav.Link>
-                            <Nav.Link href="/uploads"><span className="navLink ml-5">Upload into the Index</span></Nav.Link>
+
+                            <Nav.Link>
+                                <Link to="/gettingstarted">
+                                    <span className="navLink ml-5 mt-5">Getting Started</span>
+                                </Link>
+                            </Nav.Link>
+
+                            <Nav.Link>
+                                <Link to="/uploads">
+                                    <span className="navLink ml-5">Upload into the Index</span>
+                                </Link>
+                            </Nav.Link>
+
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

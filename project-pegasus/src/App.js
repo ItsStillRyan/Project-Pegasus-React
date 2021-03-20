@@ -25,9 +25,10 @@ function App() {
 
     return (
         <div className="bodyT">
-            <NavbarMain />
+            
             <div className="divContain">
                 <Router>
+                    <NavbarMain />
                     <Switch>
                         {/* main page */}
                         <Route exact path="/" component={MainBody} />
@@ -63,9 +64,10 @@ function App() {
                         
                         <Redirect to="/lost" />
                     </Switch>
+                    <FooterMain />
                 </Router>
             </div>
-            <FooterMain />
+            
         </div>
     )
 
