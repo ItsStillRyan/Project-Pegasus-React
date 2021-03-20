@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,22 +21,34 @@ export default function FooterMain(props) {
                             <h5 className="title">Categories</h5>
                             <ul>
                                 <li className="list-unstyled">
-                                    <a href="/galaxies">Galaxies</a>
+                                    <Link to="/galaxies">
+                                        <a>Galaxies</a>
+                                    </Link>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="/starclusters">Star Clusters</a>
+                                    <Link to="/starcluster">
+                                        <a>Star Clusters</a>
+                                    </Link>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="/planetary">Planetary</a>
+                                    <Link to="/planetary">
+                                        <a>Planetary</a>
+                                    </Link>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="/nebulae">Nebulae</a>
+                                    <Link to="/nebulae">
+                                        <a>Nebulae</a>
+                                    </Link>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="/spacecraft">Space Craft</a>
+                                    <Link to="/spacecraft">
+                                        <a>Space Craft</a>
+                                    </Link>
                                 </li>
                                 <li className="list-unstyled">
-                                    <a href="/others">Others</a>
+                                    <Link to="/others">
+                                        <a>Others</a>
+                                    </Link>
                                 </li>
                             </ul>
                         </MDBCol>
@@ -44,7 +57,17 @@ export default function FooterMain(props) {
                             <h5 className="title">Help</h5>
                             <ul>
                                 <li className="list-unstyled">
-                                    <a href="/gettingstarted">Getting Started</a>
+                                    <Link to="/gettingstarted">
+                                        <a>Getting Started</a>
+                                    </Link>
+                                </li>
+                            </ul>
+                           <h5 className="title">Uploads</h5>
+                            <ul>
+                                <li className="list-unstyled">
+                                    <Link to="/uploads">
+                                        <a>Upload a picture</a>
+                                    </Link>
                                 </li>
                             </ul>
                         </MDBCol>

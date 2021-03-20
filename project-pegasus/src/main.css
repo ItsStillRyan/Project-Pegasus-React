@@ -9,17 +9,19 @@
 } */
 
 /* main body css in App.js */
-
+body{
+        min-height: 100%;
+}
 .bodyT{
     background-image: url("images/background.jpg");
     background-color: #363f4a;
     background-size: auto;
     background-attachment: fixed;
+
 }
 
 .divContain{
     background-color: rgba(0, 0, 0, 0.4);
-    padding-bottom: 5%;
     overflow-x: hidden
 }
 .divContain2{
