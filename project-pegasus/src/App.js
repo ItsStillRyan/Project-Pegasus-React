@@ -25,7 +25,6 @@ function App() {
 
     return (
         <div className="bodyT">
-            
             <div className="divContain">
                 <Router>
                     <NavbarMain />
@@ -59,9 +58,6 @@ function App() {
                         <Route exact path="/nebulae/:_id" component={IndiviPost}/>
                         <Route exact path="/spacecraft/:_id" component={IndiviPost}/>
                         <Route exact path="/others/:_id" component={IndiviPost}/>
-                        
-
-                        
                         <Redirect to="/lost" />
                     </Switch>
                     <FooterMain />

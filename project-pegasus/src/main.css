@@ -9,14 +9,14 @@
 } */
 
 /* main body css in App.js */
-body{
-        min-height: 100%;
-}
+
 .bodyT{
     background-image: url("images/background.jpg");
     background-color: #363f4a;
     background-size: auto;
     background-attachment: fixed;
+    min-height: 100%;
+    min-width: 1366px;
 
 }
 
