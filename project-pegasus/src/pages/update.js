@@ -9,7 +9,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, } from 'mdbreact';
 //CSS
 import '../main.css'
 //API
-const baseURL = "https://3000-black-marmoset-zifzl6nb.ws-us03.gitpod.io"
+const baseURL = "https://rtwz-pegasus-backend.herokuapp.com"
 
 
 export default class Update extends React.Component {
