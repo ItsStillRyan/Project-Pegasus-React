@@ -33,6 +33,7 @@
     color: white;
     font-size:1.2em;
     line-height: 40px;
+    font-family: Conthrax;
 }
 /* footer css in footer.js */
 .footerWholeSize{
@@ -112,7 +113,7 @@
     color:white;
     font-family: Conthrax;
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 .cateBtns{
     margin-top: 2%;
@@ -174,6 +175,11 @@
 }
 .logo-sub{
     margin-top:1%;
+}
+.lost-col{
+    margin-right: 50%;
+    margin-left: 50%;
+    transform: translate(-50%);
 }
 
 /* Uploads css for uploads.js */

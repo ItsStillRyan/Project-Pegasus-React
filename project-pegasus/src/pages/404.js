@@ -17,7 +17,7 @@ const PageNotFound = () => {
             <div>
                 <Container>
                     <Row>
-                        <Col className="logo-col" >
+                        <Col className="lost-col" >
                             <img
                                 src={logo}
                                 width="800"

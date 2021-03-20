@@ -33,19 +33,23 @@ function App() {
                         <Route exact path="/" component={MainBody} />
 
                         {/* Categories*/}
-                        <div className="divContain2">
                         <Route exact path="/galaxies" component={Galaxies} />
                         <Route exact path="/starcluster" component={StarCluster} />
                         <Route exact path="/planetary" component={Planetary} />
                         <Route exact path="/nebulae" component={Nebulae} />
                         <Route exact path="/spacecraft" component={SpaceCraft} />
                         <Route exact path="/others" component={Others} />
-                        </div>
                         {/* Postings */}
                         <Route exact path="/uploads" component={Uploads}/>
 
                         {/* Update */}
                         <Route exact path="/update/:_id" component={Update}/>
+
+                        {/* Getting Started */}
+                        <Route exact path="/gettingstarted" component={GettingStarted} />
+
+                        {/* page not found */}
+                        <Route exact path="/lost" component={PageNotFound} />
 
                         {/* Individual Posts */}
                         <Route exact path="/galaxies/:_id" component={IndiviPost}/>
@@ -56,11 +60,7 @@ function App() {
                         <Route exact path="/others/:_id" component={IndiviPost}/>
                         
 
-                        {/* Getting Started */}
-                        <Route exact path="/gettingstarted" component={GettingStarted} />
-
-                        {/* page not found */}
-                        <Route exact path="/lost" component={PageNotFound} />
+                        
                         <Redirect to="/lost" />
                     </Switch>
                 </Router>

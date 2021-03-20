@@ -27,7 +27,7 @@ export default class NavbarMain extends React.Component {
         for (let x of this.state.web_cats) {
             for (let i = 0; i < x.categories.length; i++) {
                 accum.push(
-                    <NavDropdown.Item href={"/" + x.categories[i]}>{x.categories[i]}</NavDropdown.Item>
+                    <NavDropdown.Item href={"/" + x.categories[i].toLowerCase()}>{x.categories[i].toLowerCase()}</NavDropdown.Item>
 
                 )
             }

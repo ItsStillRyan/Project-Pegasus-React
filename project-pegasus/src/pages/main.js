@@ -122,8 +122,8 @@ const Main = () => {
                     <Row className="mainAbout2">
                         <Col className="mainTextDesc">
                             <p>
-                                New to Astrophotography? <br/>
-                                Need help getting started?<br/>
+                                New to Astrophotography? <br />
+                                Need help getting started?<br />
                                 <a href="/gettingstarted">Click here!</a>
                             </p>
                         </Col>
@@ -252,6 +252,12 @@ const Main = () => {
                     </Row>
                 </Container>
             </div>
+
+            <Row>
+                <Col className="chevronDown">
+                    <i class="fas fa-chevron-up"></i>
+                </Col>
+            </Row>
 
         </React.Fragment>
     )
