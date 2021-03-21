@@ -22,7 +22,7 @@ As the user, the goal is to have a place where I can share my findings, pictures
 ## Demo
 ___
 The live website can be access from this link:
-### [The Pegasus Index](https://vigilant-torvalds-eac850.netlify.app/)
+### [The Pegasus Index](https://wonderful-joliot-895ffd.netlify.app)
 ***
 ## **Content**
 ___
@@ -51,30 +51,46 @@ ___
 * Upload post form
 
 ___
-#### Landing page
+### Landing page
 The main logo along with the title will be the first thing user sees upon entering the page. Scrolling down, there will be a small content divider showing a small glimps on what the website is about. Further down, there is an interactive category list, displaying all 6 categories in image buttons.
-
-#### Categories page
+___### Categories page
 This constitutes all 6 categories as they are of the same layout.
 Upon entering, you'll be greeted with the title of the respective category and a small description about it. A filter bar is present to filter only by title. The contents of all the posts will follow up under the filter bar. All posts will be displayed in cards, a preview of the photograph along with the title and the astrophotographer.
 
-#### Individual post page
+### Individual post page
+This page will consist of the post that the user has chosen to engage on. All the details will be shown in the order of 
+* Full picture
+* Title
+* Poster's Name
+* Location
+* Equipment Used
+* Aquisitions and Processing
+* Comments
 
-#### Getting Started page
+Here, people and engage in discussions with the post in the comments section.
 
-#### Uploads page
+### Getting Started page
+Here, Users can learn how to post their own pictures and what each form field works/require. 
 
-#### Responsiveness
+New users can also come here to get started on astrophotography and start their research on the hobby.
+
+### Uploads page
+This page is for users who wants to upload into the index. All forms in here are required except the location. 
+
+### Responsiveness
 This website is meant to only be used on a computer system. Any monitor resolution above: 1366 x 786
-#### Navigation
 
+### Navigation
+This website employs the use of the Three-click rule for optimal UIUX.
 ***
 ## UI and Design Choices
 ___
-#### **Space/modern themed. Around a main focus**
-
+#### **Space/futuristic themed. Around a main focus**
+As this website revolves around the topic of space, I'm going for a futuristic sci-fi look. Using a constellation map in the background, it cuts through the mundane solid color. 
 
 #### **Color choices and Fonts**
+ Using darker complementary colors like dark blue and its other shades. Contrasting it with yellow and turquiose in only my main logo just to make it stand out from the dark.
+
 
 ***
 
@@ -134,18 +150,81 @@ ___
 ### Content
 * Ensure all last changes are saved and committed
 * Successfully went through with a Git Push
+___
+### Express.js deployment to Heroku
+1. After confirming and pushing the final build of the project, run the command to download Heroku
 
-### Activate Deployment
-1. On GitHub, navigate to your site's repository.
-2. Under your repository name, click Settings
-3. Under "GitHub Pages", use the None or Branch drop-down menu and select a publishing source.
-Drop-down menu to select a publishing source
-4. Optionally, use the drop-down menu to select a folder for your publishing source.
-5. Click Save.
+        npm install -g heroku
+2. After install has succeded, log in to heroku with
+
+        heroku login -i
+    Enter username and password
+3. Create Heroku app
+
+        heroku create <app-name>
+    Replace <app-name> with a name of your choice. Do not use underscore. As the app name has to be unique, make sure the name you use is distinctive. You can use your initials as part of the app name, for instance.
+4. The Procfile executes a command when Heroku needs to run our server. Create one in the same directory as index.js and **name it as Procfile (the first alphabet must be capitalized, and there is no extension).**
+
+5. Add the following line to the Procfile:
+
+        web: node index.js
+
+6. Add a start script to package.json
+
+        {
+        "name": "06-api-auth",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "start": "node index.js"
+        },
+        . . .
+        }
+7. Change the port that we are using
+
+    Change the 3000 in app.listen to process.env.PORT
+8. Push to Heroku
+    Make sure you have a .gitignore file, and it must have node_modules, sessions/ and .env included,
+
+        git push heroku master
+
+9. We need to duplicate the content of the .env file inside the config variables section of Heroku.
+
+    Go to Heroku and look for the app you just deployed. Then click on Settings.
+
+    Next, click on Reveal Config Vars
+
+    After which, add in MONGO_URL, and the connection URL from your .env file:
+
+10. Run the app
+
+    From your Heroku project panel, click on the button that says Open App. Test if your app is working.
+
+
+
+___
+### React.js deployment to Netlify
+1. After confirming and pushing the final build of the project, run the command 
+
+        npm run build
+2. A build folder should be created in the explorer. Download the file and unzip  build.tar
+3. Log into Netlify.com and go to the Sites tab
+4. Drag the build folder into the box that says "Drag and drop your site output folder here"
+5. Wait for the project to be deployed.
 
 
 ***
 ## Credits
 ___
+All the following has been taken from Reddit, in the subreddit r/Astrophotography.
+* All uploaded posts
+* Getting started information page
+* Landing page categories button pictures
 
+Main logo pegasus taken from https://dribbble.com/shots/3037025-Constellations-Pegasus
 
+Deployment Steps taken with courtesy of Paul Chor
+
+Layout for most UIUX taken from both https://react-bootstrap.github.io/ & https://mdbootstrap.com/ templates
