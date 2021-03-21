@@ -53,7 +53,8 @@ ___
 ___
 ### Landing page
 The main logo along with the title will be the first thing user sees upon entering the page. Scrolling down, there will be a small content divider showing a small glimps on what the website is about. Further down, there is an interactive category list, displaying all 6 categories in image buttons.
-___### Categories page
+
+### Categories page
 This constitutes all 6 categories as they are of the same layout.
 Upon entering, you'll be greeted with the title of the respective category and a small description about it. A filter bar is present to filter only by title. The contents of all the posts will follow up under the filter bar. All posts will be displayed in cards, a preview of the photograph along with the title and the astrophotographer.
 
@@ -95,21 +96,16 @@ As this website revolves around the topic of space, I'm going for a futuristic s
 ***
 
 ## Testing
-___
-### _Markup Validations_
-HTML page validated using W3 validator
-#### index.html
-4 errors - missing alt tag on area map
-No other significant errors
-#### highscore.html
-No significant errors alerted
-#### Gameplay.html (all 4 included)
-No significant errors alerted
+
 ___
 ### _Console.log Checks_
-Axios check - "Database Active, Returning test value:"
+Axios check - 
 
-Score check - Every time user clicks on the correct answer, "ScoreUp 1++"
+        Database Active, Mongo Connected
+        Database Active, Mongo Connected
+        Database Active, Mongo Connected
+        Database Active, Main Function Running
+
 ***
 ## Technologies Used
 ___
@@ -133,16 +129,19 @@ All graphics have been done photoshop
 #### **DAFONT** https://www.dafont.com/
 Fonts that are in the game was found and downloaded here
 
-#### **Dirty Markup** https://www.10bestdesign.com/dirtymarkup/
-Cleaning up codes
+#### **MongoDB** https://www.mongodb.com/
+Main database use
 
-#### **w3 Markup Validator** http://validator.w3.org/
-Markup Validations
+#### **Netlify** https://app.netlify.com/
+For Front end deployment
+
+#### **Heroku** https://www.heroku.com
+For Back end deployment
 ***
-
 
 ## Future development plans and Existing Bugs
 ___
+Mainly looking into UI changes. Loading screen in particular. 
 
 ***
 ## Deployment
