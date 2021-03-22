@@ -141,8 +141,11 @@ For Back end deployment
 
 ## Future development plans and Existing Bugs
 ___
-Mainly looking into UI changes. Loading screen in particular. 
+1. Mainly looking into UI changes. Loading screen in particular could add more immersion.
 
+2. Filtering. I am aware of the lack of filtering in this project so this would be one of the top priority in the list to tackle and implement.
+
+3. A better use of REACT.JS without doing a windows.reload for certain pages. 
 ***
 ## Deployment
 ___
