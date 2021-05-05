@@ -1,4 +1,4 @@
-import React from 'react'
+import { React} from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 //import pages
 import NavbarMain from './commons/navbar'
@@ -24,46 +24,48 @@ import Others from './pages/Category-cluster/others'
 function App() {
 
     return (
-        <div className="bodyT">
-            <div className="divContain">
-                <Router>
-                    <NavbarMain />
-                    <Switch>
-                        {/* main page */}
-                        <Route exact path="/" component={MainBody} />
+        <div>
+            <div className="bodyT">
+                <div className="divContain">
+                    <Router>
+                        <NavbarMain />
+                        <Switch>
+                            {/* main page */}
+                            <Route exact path="/" component={MainBody} />
 
-                        {/* Categories*/}
-                        <Route exact path="/galaxies" component={Galaxies} />
-                        <Route exact path="/starcluster" component={StarCluster} />
-                        <Route exact path="/planetary" component={Planetary} />
-                        <Route exact path="/nebulae" component={Nebulae} />
-                        <Route exact path="/spacecraft" component={SpaceCraft} />
-                        <Route exact path="/others" component={Others} />
-                        {/* Postings */}
-                        <Route exact path="/uploads" component={Uploads}/>
+                            {/* Categories*/}
+                            <Route exact path="/galaxies" component={Galaxies} />
+                            <Route exact path="/starcluster" component={StarCluster} />
+                            <Route exact path="/planetary" component={Planetary} />
+                            <Route exact path="/nebulae" component={Nebulae} />
+                            <Route exact path="/spacecraft" component={SpaceCraft} />
+                            <Route exact path="/others" component={Others} />
+                            {/* Postings */}
+                            <Route exact path="/uploads" component={Uploads} />
 
-                        {/* Update */}
-                        <Route exact path="/update/:_id" component={Update}/>
+                            {/* Update */}
+                            <Route exact path="/update/:_id" component={Update} />
 
-                        {/* Getting Started */}
-                        <Route exact path="/gettingstarted" component={GettingStarted} />
+                            {/* Getting Started */}
+                            <Route exact path="/gettingstarted" component={GettingStarted} />
 
-                        {/* page not found */}
-                        <Route exact path="/lost" component={PageNotFound} />
+                            {/* page not found */}
+                            <Route exact path="/lost" component={PageNotFound} />
 
-                        {/* Individual Posts */}
-                        <Route exact path="/galaxies/:_id" component={IndiviPost}/>
-                        <Route exact path="/starcluster/:_id" component={IndiviPost}/>
-                        <Route exact path="/planetary/:_id" component={IndiviPost}/>
-                        <Route exact path="/nebulae/:_id" component={IndiviPost}/>
-                        <Route exact path="/spacecraft/:_id" component={IndiviPost}/>
-                        <Route exact path="/others/:_id" component={IndiviPost}/>
-                        <Redirect to="/lost" />
-                    </Switch>
-                    <FooterMain />
-                </Router>
+                            {/* Individual Posts */}
+                            <Route exact path="/galaxies/:_id" component={IndiviPost} />
+                            <Route exact path="/starcluster/:_id" component={IndiviPost} />
+                            <Route exact path="/planetary/:_id" component={IndiviPost} />
+                            <Route exact path="/nebulae/:_id" component={IndiviPost} />
+                            <Route exact path="/spacecraft/:_id" component={IndiviPost} />
+                            <Route exact path="/others/:_id" component={IndiviPost} />
+                            <Redirect to="/lost" />
+                        </Switch>
+                        <FooterMain />
+                    </Router>
+                </div>
+
             </div>
-            
         </div>
     )
 
