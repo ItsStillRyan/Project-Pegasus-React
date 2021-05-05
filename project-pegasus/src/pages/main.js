@@ -29,6 +29,9 @@ import pegaCenter from '../images/main-logo/pegaCenter.png'
 const Main = () => {
     return (
         <React.Fragment>
+            <div id="mainPopUp">
+
+            </div>
             <div>
                 <Container>
                     <div className="mainLogoSec">

@@ -6,7 +6,7 @@ import FooterMain from './commons/footer'
 import MainBody from './pages/main'
 import PageNotFound from './pages/404'
 import GettingStarted from './pages/getting-started'
-import Uploads from './pages/Uploads'
+import Uploads from './pages/uploads'
 import IndiviPost from './pages/indiviPost'
 import Update from './pages/update'
 // categories
