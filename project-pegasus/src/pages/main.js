@@ -40,12 +40,60 @@ export default class Main extends React.Component {
                         </Col>
                         <Col xs={2} className="mainPopUpCol" >
                             <Button
-                                variant="link" id="popUpClose"
+                                variant="link"
+                                id="popUpClose"
+                                onClick={() => {
+                                    document.querySelector("#mainPopUp").style.display = "none"
+                                    document.querySelector("#mainScreenBlur").style.filter = "blur(0px)"
+                                }}
                             >
                                 <i class="fas fa-times"></i>
                             </Button>
                         </Col>
                     </Row>
+
+                    <div id="mainPopUpText">
+                        <Row id="mainPopUpImg">
+                            <Col>
+                                <img
+                                    src={logo}
+                                    width="100"
+                                    height="100"
+                                    alt="Pegasus Logo"
+                                />
+                            </Col>
+                        </Row>
+                        <Row id="mainPopUpTitle">
+                            <Col><h1>Welcome!</h1></Col>
+                        </Row>
+                        <Row>
+                            <Col><p>Need help getting started?</p></Col>
+                        </Row>
+                    </div>
+                    <div id="mainPopUpButton">
+                        <Row>
+                            <Col>
+                                <Link to="/gettingstarted">
+                                    <Button
+                                        variant="outline-info"
+                                        id="mainPopUpIndivButton">
+                                        Getting Started
+                            </Button>
+                                </Link>
+
+                            </Col>
+                            <Col>
+                            <Link to="/uploads">
+                            <Button
+                                    variant="outline-info"
+                                    id="mainPopUpIndivButton">
+                                    Upload into the Index
+                            </Button>
+                            </Link>      
+                            </Col>
+                        </Row>
+                    </div>
+
                 </Container>
             </div>
         )

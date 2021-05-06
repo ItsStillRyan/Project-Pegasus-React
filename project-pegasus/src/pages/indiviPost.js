@@ -4,11 +4,7 @@ import axios from "axios";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Accordion from 'react-bootstrap/Accordion'
-import Card from 'react-bootstrap/Card'
-import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, MDBCol, MDBIcon, MDBBtn } from 'mdbreact';
+import {MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 //CSS
 import '../main.css'
 //API
